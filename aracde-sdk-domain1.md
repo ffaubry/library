@@ -1,16 +1,16 @@
-### Domain( feature, fieldName ) -> `Dictionary`
+## Domain( feature, fieldName ) -> `Dictionary`
 
 **[Since version 1.11](../../guide/version-matrix/)**
 
 Returns the domain assigned to the given field of the provided `feature`. If the `feature` belongs to a class with a subtype, this returns the domain assigned to the subtype.
 
-#### Parameters
+### Parameters
 - **`feature`**: [Feature](../../guide/types/#feature)  
 The Feature with a field that has a domain.
 - **`fieldName`**: [Text](../../guide/types/#text)  
 The name of the field (not the alias of the field) assigned the domain.
 
-#### Returns value: [Dictionary](../../guide/types/#dictionary)
+### Return value: [Dictionary](../../guide/types/#dictionary)
 
 Returns a dictionary described by the properties below:
 - **`type`**: [Text](../../guide/types/#text)  
@@ -26,7 +26,7 @@ Only applicable to `range` domains. The maximum value of the domain.
 - **`codedValues`**: [Dictionary[]](../../guide/types/#dictionary)  
 Only applicable to `codedValue` domains. An array of dictionaries describing the valid values for the field. Each dictionary has a `code` property, which contains the actual field value, and a `name` property containing a user-friendly description of the value (e.g. `{ code: 1, name: "pavement" }`).
 
-#### Example
+### Example
 
 The domain assigned to the feature's subtype
 
