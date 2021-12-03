@@ -5,17 +5,14 @@
 Returns the domain assigned to the given field of the provided `feature`. If the `feature` belongs to a class with a subtype, this returns the domain assigned to the subtype.
 
 #### Parameters
-
 - **`feature`**: [Feature](../../guide/types/#feature)  
 The Feature with a field that has a domain.
-
 - **`fieldName`**: [Text](../../guide/types/#text)  
 The name of the field (not the alias of the field) assigned the domain.
 
 #### Returns value: [Dictionary](../../guide/types/#dictionary)
 
 Returns a dictionary described by the properties below:
-
 - **`type`**: [Text](../../guide/types/#text)  
 The type of domain - either `codedValue` or `range`.
 - **`name`**: [Text](../../guide/types/#text)  
