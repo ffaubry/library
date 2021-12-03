@@ -18,7 +18,7 @@ Returns a dictionary described by the properties below:
 &emsp;**`type`**: [Text](../../guide/types/#text)  
 &emsp;The type of domain - either `codedValue` or `range`.
 
-&emsp;`name`**: [Text](../../guide/types/#text)  
+&emsp;**`name`**: [Text](../../guide/types/#text)  
 &emsp;The domain name.
 
 &emsp;**`dataType`**: [Text](../../guide/types/#text)  
