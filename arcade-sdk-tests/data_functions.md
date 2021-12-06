@@ -83,7 +83,7 @@ The input array to test.
 - **`testFunction`**: [Function](../../guide/logic/#user-defined-functions)  
 The function used to test each element in the array. The function must return a truthy value if the element passes the test. The function can be a user-defined function or a core Arcade function defined with the following parameter:
 
-  - **`value`**: *  
+  - **`value`**: Any  
 Represents the value of an element in the array.
 
 #### Return value: [Boolean](../../guide/types/#boolean)
@@ -130,7 +130,7 @@ The input array to test.
 - **`testFunction`**: [Function](../../guide/logic/#user-defined-functions)  
 The function used to test each element in the `inputArray`. The The function must return a truthy value if the element passes the test. The function can be a user-defined function or a core Arcade function defined with the following parameter:
 
-  - **`value`**: *  
+  - **`value`**: Any  
 Represents the value of an element in the array.
 
 #### Return value: [Boolean](../../guide/types/#boolean)
@@ -174,7 +174,7 @@ Returns a new array of a given length.
 
 - **`value`**: [Number](../../guide/types/#number)  
 The desired length for the new array.
-- **`defaultValue`** (_Optional_): *  
+- **`defaultValue`** (_Optional_): Any  
 The value for each element in the array. If no value is specified, the default will be `null`.
 
 #### Return value: [Array](../../guide/types/#array)
@@ -238,7 +238,7 @@ Count(Attachments($feature))
 
 ## Back
 
-### Back( array ) -> *
+### Back( array ) -> Any
 
 **[Since version 1.12](../../guide/version-matrix)**
 
@@ -249,7 +249,7 @@ Returns the last element of an array. If the array is empty, then `Back(array)` 
 - **`array`**: [Array](../../guide/types/#array)  
 The array to get the last value from.
 
-#### Return value: *
+#### Return value: Any
 
 #### Example
 
@@ -304,9 +304,9 @@ Logs a message in the messages window for debugging purposes. This function can 
 
 #### Parameters
 
-- **`message`**: *  
+- **`message`**: Any  
 A messages to output in the messages window.
-- **`[value1, ..., valueN]`** (_Optional_): *  
+- **`[value1, ..., valueN]`** (_Optional_): Any  
 A list of variables, text, nunber, or dictionary to output in the messages window.
 
 #### Return value: Null
@@ -411,9 +411,9 @@ Returns a new dictionary based on the provided arguments. The arguments are name
 
 - **`name1`**: [Text](../../guide/types/#text)  
 The attribute name.
-- **`value1`**: *  
+- **`value1`**: Any  
 The attribute value to pair to `name1`.
-- **`[name2, value2, ..., nameN, valueN]`** (_Optional_): *  
+- **`[name2, value2, ..., nameN, valueN]`** (_Optional_): Any  
 Ongoing name/value pairs.
 
 #### Return value: [Dictionary](../../guide/types/#dictionary)
@@ -959,7 +959,7 @@ The geometry of the feature.
 The first attribute's name.
 - **`value1`**: [Text](../../guide/types/#text) \| [Date](../../guide/types/#date) \| [Number](../../guide/types/#number) \| [Boolean](../../guide/types/#boolean)  
 The first attribute's value.
-- **`[attribute2, value2, ..., attributeN, valueN]`** (_Optional_): *  
+- **`[attribute2, value2, ..., attributeN, valueN]`** (_Optional_): Any  
 Ongoing name/value pairs for each attribute in the feature.
 
 #### Return value: [Feature](../../guide/types/#feature)
@@ -1081,7 +1081,7 @@ Applies to `midspan` association types. Returns a floating point number from 0-1
 - **`side`**: [Text](../../guide/types/#text)  
 Applies to `junctionEdge` association types. Indicates which side the junction is on.
 
-**Possible values:** `from` \| `to`
+Possible values: `from` or `to`
 
 #### Examples
 
@@ -1118,7 +1118,8 @@ Creates a FeatureSet from a Feature Layer based on its layer ID within a map or 
 - **`featureSetCollection`**: [FeatureSetCollection](../../guide/types/#featuresetcollection)  
 The map or feature service containing one or more layers from which to create a FeatureSet. Typically, this value is the `$map` or `$datastore` global.
 - **`id`**: [Text](../../guide/types/#text)  
-The ID of the layer within the given `map`. This layer must be created from a feature service; feature collections are not supported. **Please note that this must be a string literal.**
+The ID of the layer within the given `map`. This layer must be created from a feature service; feature collections are not supported.  
+**Please note that this must be a string literal.**
 - **`fields`** (_Optional_): [Text[]](../../guide/types/#text)  
 The fields to include in the FeatureSet. By default, all fields are included. To request all fields in the layer, set this value to `['*']`. Limiting the number of fields improves the performance of the script.
 - **`includeGeometry`** (_Optional_): [Boolean](../../guide/types/#boolean)  
@@ -1153,7 +1154,8 @@ Creates a FeatureSet from a Feature Layer based on its name within a map or feat
 - **`featureSetCollection`**: [FeatureSetCollection](../../guide/types/#featuresetcollection)  
 The map or feature service containing one or more layers from which to create a FeatureSet. Typically, this value is the `$map` or `$datastore` global.
 - **`title`**: [Text](../../guide/types/#text)  
-The title of the layer within the given `map`. This layer must be created from a feature service; feature collections are not supported. **Please note that this must be a string literal.**
+The title of the layer within the given `map`. This layer must be created from a feature service; feature collections are not supported.  
+**Please note that this must be a string literal.**
 - **`fields`** (_Optional_): [Text[]](../../guide/types/#text)  
 The fields to include in the FeatureSet. By default, all fields are included. To request all fields in the layer, set this value to `['*']`. Limiting the number of fields improves the performance of the script.
 - **`includeGeometry`** (_Optional_): [Boolean](../../guide/types/#boolean)  
@@ -1308,7 +1310,7 @@ The input array to filter.
 - **`filterFunction`**: [Function](../../guide/logic/#user-defined-functions)  
 The function used to filter elements in the array. The The function must return a truthy value if the element passes the test. This function can be a user-defined function or a core Arcade function defined with the following parameter:
 
-  - **`value`**: *  
+  - **`value`**: Any  
 Represents the value of an element in the array.
 
 #### Return value: [Array](../../guide/types/#array)
@@ -1346,11 +1348,11 @@ Filter(myArray, isNotEmpty)
 
 This function has 2 signatures:
 
-- [First( array ) -> *](#first1)
+- [First( array ) -> Any](#first1)
 - [First( features ) -> Feature](#first2)
 
 <a name="first1"></a>
-### First( array ) -> *
+### First( array ) -> Any
 
 Returns the first element in an array. Returns `null` if the array is empty.
 
@@ -1359,7 +1361,7 @@ Returns the first element in an array. Returns `null` if the array is empty.
 - **`array`**: [Array](../../guide/types/#array)  
 The array from which to return the first item.
 
-#### Return value: *
+#### Return value: Any
 
 #### Example
 
@@ -1933,7 +1935,7 @@ Determines whether an array contains a given value. Returns `true` if the value 
 
 - **`array`**: [Array](../../guide/types/#array)  
 The input array.
-- **`value`**: *  
+- **`value`**: Any  
 The value to look for in the given array.
 
 #### Return value: [Boolean](../../guide/types/#boolean)
@@ -1965,7 +1967,7 @@ Returns the zero-based index location of the input item in an array. If `item` d
 
 - **`array`**: [Array](../../guide/types/#array)  
 The array to search.
-- **`value`**: *  
+- **`value`**: Any  
 The item to locate in the array.
 
 #### Return value: [Number](../../guide/types/#number)
@@ -1996,7 +1998,7 @@ Inserts a new value into an array at a given index. Existing elements positioned
 The array to insert the new value into.
 - **`index`**: [Number](../../guide/types/#number)  
 The index of the array where the new value should be inserted. An index of 0 will insert the value at the beginning of the array. An index that equals the size of the array will insert the value at the end of the array. An index greater than the size of the array will cause an error.  If a negative index is provided, it will be used as an offset from the end of the array.
-- **`value`**: *  
+- **`value`**: Any  
 The value to insert into the array.
 
 #### Return value: Null
@@ -2026,7 +2028,7 @@ Returns `true` if the provided value is `null` or an empty string (e.g. `''`). R
 
 #### Parameter
 
-- **`value`**: *  
+- **`value`**: Any  
 The value that is compared against `null` or `''`. This may be a value of any type.
 
 #### Return value: [Boolean](../../guide/types/#boolean)
@@ -2056,7 +2058,7 @@ Indicates whether the input value is not a number (NaN). A number is considered 
 
 #### Parameter
 
-- **`value`**: *  
+- **`value`**: Any  
 The value to check if it is NaN.
 
 #### Return value: [Boolean](../../guide/types/#boolean)
@@ -2091,7 +2093,7 @@ The input array to map.
 - **`mappingFunction`**: [Function](../../guide/logic/#user-defined-functions)  
 The function to call on each element in the provided array. The function must return a new item that will be part of the returned array. The function can be a user-defined function or a core Arcade function defined with the following parameter:
 
-  - **`value`**: *  
+  - **`value`**: Any  
 Represents the value of an element in the array.
 
 #### Return value: [Array](../../guide/types/#array)
@@ -2169,7 +2171,7 @@ The input array to test.
 - **`testFunction`**: [Function](../../guide/logic/#user-defined-functions)  
 The function to test each element in the array. The function must return a falsy value if the element doesn't pass the test. The function can be a user-defined function or a core Arcade function defined with the following parameter:
 
-  - **`value`**: *  
+  - **`value`**: Any  
 Represents the value of an element in the array.
 
 #### Return value: [Boolean](../../guide/types/#boolean)
@@ -2209,7 +2211,7 @@ Parses the input value to a number.
 
 #### Parameters
 
-- **`value`**: *  
+- **`value`**: Any  
 The value to convert to a number.
 - **`pattern`** (_Optional_): [Text](../../guide/types/#text)  
 The format pattern string used to parse numbers formatted in a localized context from a string value to a number. Sepcial characters to define the pattern:
@@ -2306,7 +2308,7 @@ OrderBy($layer, 'Rank ASC')
 
 ## Pop
 
-### Pop( array ) -> *
+### Pop( array ) -> Any
 
 **[Since version 1.12](../../guide/version-matrix)**
 
@@ -2317,7 +2319,7 @@ Removes and returns the element at the end of the array. If the array is empty, 
 - **`array`**: [Array](../../guide/types/#array)  
 The input array from which the last element will be removed and returned.
 
-#### Return value: *
+#### Return value: Any
 
 #### Example
 
@@ -2377,7 +2379,7 @@ Adds an element to the end of an array and returns the new length of the array.
 
 - **`array`**: [Array](../../guide/types/#array)  
 The array to have elements pushed to.
-- **`value`**: *  
+- **`value`**: Any  
 The value to add as the last element of the input array.
 
 #### Return value: [Number](../../guide/types/#number)
@@ -2395,7 +2397,7 @@ Push(['orange', 'purple', 'gray'], 'red').
 
 ## Reduce
 
-### Reduce( array, reducerFunction, initialValue? ) -> *
+### Reduce( array, reducerFunction, initialValue? ) -> Any
 
 **[Since version 1.16](../../guide/version-matrix)**
 
@@ -2408,14 +2410,14 @@ The input array to reduce.
 - **`reducerFunction`**: [Function](../../guide/logic/#user-defined-functions)  
 The reducer function.
 
-  - **`previousValue`**: *  
+  - **`previousValue`**: Any  
 The first time the function executes, this will be the first element in the input array or the `initialValue`, if provided.
-  - **`arrayValue`**: *  
+  - **`arrayValue`**: Any  
 Represents the current value of an element in the input array.
-- **`initialValue`** (_Optional_): *  
+- **`initialValue`** (_Optional_): Any  
 An item to pass into the first argument of the reducer function.
 
-#### Return value: *
+#### Return value: Any
 
 The value that was assembled by the reducer function for each element in the array.
 
@@ -2478,7 +2480,7 @@ Changes the number of elements in an array to the specified size. It can be used
 The array to be resized.
 - **`newSize`**: [Number](../../guide/types/#number)  
 The number of elements desired in the resized array.
-- **`value`** (_Optional_): *  
+- **`value`** (_Optional_): Any  
 The optional value that will be used for any new elements added to the array. If no value is specified, the newly added elements will have a `null` value.
 
 #### Return value: Null
@@ -2663,9 +2665,9 @@ A user defined function to be used for the sort. The function receives two eleme
 `= 0`: keep the original order of `a` and `b`  
 `< 0`: sort `a` before `b`
 
-  - **`a`**: *  
+  - **`a`**: Any  
 The first element for comparison.
-  - **`b`**: *  
+  - **`b`**: Any  
 The second element for comparison.
 
 #### Return value: [Array](../../guide/types/#array)
@@ -2706,9 +2708,9 @@ Concatenates all parameters together into a new array.
 
 #### Parameters
 
-- **`value1`**: *  
+- **`value1`**: Any  
 A value to be spliced into a new array.
-- **`[value2, ..., valueN]`** (_Optional_): *  
+- **`[value2, ..., valueN]`** (_Optional_): Any  
 Ongoing values to be spliced into a new array.
 
 #### Return value: [Array](../../guide/types/#array)
@@ -2977,7 +2979,7 @@ Returns the type of the input value. Will return one of the following types: Arr
 
 #### Parameter
 
-- **`value`**: *  
+- **`value`**: Any  
 The input value, variable, or feature attribute.
 
 #### Return value: [Text](../../guide/types/#text)

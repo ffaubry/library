@@ -29,44 +29,41 @@ Functions for formatting text values. These are commonly used in the labeling an
 
 ## Concatenate
 
-### Concatenate( textArray, separator?, format? ) -> [Text](../../guide/types/#text)
+### Concatenate( array, separator?, format? ) -> [Text](../../guide/types/#text)
 
 Concatenates values together and returns a text value.
 
 #### Parameters
 
-- **`textArray`**: [Text[]](../../guide/types/#text)  
+- **`array`**: [Text[]](../../guide/types/#text)  
 An array of text values to concatenate.
 - **`separator`** (_Optional_): [Text](../../guide/types/#text)  
 Separator to use for concatenation if `values` parameter is an array. Or text to concatenate, if a single value is provided for the first parameter. If not provided will be empty.
 - **`format`** (_Optional_): [Text](../../guide/types/#text)  
-Formatting text for dates or numbers. This parameter is available in Arcade version 1.3 and later. See the list of possible values below.
-
-| **Value** | **Description** |
-| :--- | :--- |
-| 0 | Digit |
-| # | Digit, omitting leading/trailing zeros |
-| D | Day of the month, not padded (1 - 31) |
-| DD | Day of the month, padded (01 - 31) |
-| DDD | Ordinal day of the year (1 - 365) |
-| d | Day of the week (1 - 7) |
-| ddd | Abbreviated day of the week (e.g. Mon) |
-| dddd | Full day of the week (e.g. Monday) |
-| M | Month number (1 - 12) |
-| MM | Month number, padded (01 - 12) |
-| MMM | Abbreviated month name (e.g. Jan) |
-| MMMM | Full month name (e.g. January) |
-| m | Minutes, not padded (0 - 59) |
-| mm | Minutes, padded (00 - 59) |
-| Y | Full year |
-| YY | Two-digit year |
-| h | Civilian hours, not padded (0 - 12) |
-| hh | Civilian hours, padded (00 - 12) |
-| H | Military hours, not padded (0 - 24) |
-| HH | Military hours, padded (00 - 24) |
-| s | Seconds, not padded (0 - 59) |
-| ss | Seconds, padded (00 - 59) |
-
+Formatting text for dates or numbers. This parameter is available in Arcade version 1.3 and later.  
+Possible values:  
+  - `0`: Digit  
+  - `#`: Digit, omitting leading/trailing zeros  
+  - `D`: Day of the month, not padded (1 - 31)  
+  - `DD`: Day of the month, padded (01 - 31)  
+  - `DDD`: Ordinal day of the year (1 - 365)  
+  - `d`: Day of the week (1 - 7)  
+  - `ddd`: Abbreviated day of the week (e.g. Mon)  
+  - `dddd`: Full day of the week (e.g. Monday)  
+  - `M`: Month number (1 - 12)  
+  - `MM`: Month number, padded (01 - 12)  
+  - `MMM`: Abbreviated month name (e.g. Jan)  
+  - `MMMM`: Full month name (e.g. January)  
+  - `m`: Minutes, not padded (0 - 59)  
+  - `mm`: Minutes, padded (00 - 59)  
+  - `Y`: Full year  
+  - `YY`: Two-digit year  
+  - `h`: Civilian hours, not padded (0 - 12)  
+  - `hh`: Civilian hours, padded (00 - 12)  
+  - `H`: Military hours, not padded (0 - 24)  
+  - `HH`: Military hours, padded (00 - 24)  
+  - `s`: Seconds, not padded (0 - 59)  
+  - `ss`: Seconds, padded (00 - 59)
 
 #### Return value: [Text](../../guide/types/#text)
 
@@ -385,36 +382,33 @@ Converts its argument into a string and optionally formats it. Returns `null` if
 
 #### Parameters
 
-- **`value`**: *  
+- **`value`**: Any  
 A value to be converted to a string (e.g. date, number or other type). When a date is provided, this function assumes the date/time object is in UTC and automatically converts the value to the local time of the client executing the expression. If the date/time value returned from the database already represents local time, then you should use the `toUTC` function to avoid applying an extra offset.
 - **`format`** (_Optional_): [Text](../../guide/types/#text)  
-Formatting string for dates or numbers. See the list of possible values below.
-
-| **Value** | **Description** |
-| :--- | :--- |
-| 0 | Digit |
-| # | Digit, omitting leading/trailing zeros |
-| D | Day of the month, not padded (1 - 31) |
-| DD | Day of the month, padded (01 - 31) |
-| DDD | Ordinal day of the year (1 - 365) |
-| d | Day of the week (1 - 7) |
-| ddd | Abbreviated day of the week (e.g. Mon) |
-| dddd | Full day of the week (e.g. Monday) |
-| M | Month number (1 - 12) |
-| MM | Month number, padded (01 - 12) |
-| MMM | Abbreviated month name (e.g. Jan) |
-| MMMM | Full month name (e.g. January) |
-| m | Minutes, not padded (0 - 59) |
-| mm | Minutes, padded (00 - 59) |
-| Y | Full year |
-| YY | Two-digit year |
-| h | Civilian hours, not padded (0 - 12) |
-| hh | Civilian hours, padded (00 - 12) |
-| H | Military hours, not padded (0 - 24) |
-| HH | Military hours, padded (00 - 24) |
-| s | Seconds, not padded (0 - 59) |
-| ss | Seconds, padded (00 - 59) |
-
+Formatting string for dates or numbers.  
+Possible values:  
+  - `0`: Digit  
+  - `#`: Digit, omitting leading/trailing zeros  
+  - `D`: Day of the month, not padded (1 - 31)  
+  - `DD`: Day of the month, padded (01 - 31)  
+  - `DDD`: Ordinal day of the year (1 - 365)  
+  - `d`: Day of the week (1 - 7)  
+  - `ddd`: Abbreviated day of the week (e.g. Mon)  
+  - `dddd`: Full day of the week (e.g. Monday)  
+  - `M`: Month number (1 - 12)  
+  - `MM`: Month number, padded (01 - 12)  
+  - `MMM`: Abbreviated month name (e.g. Jan)  
+  - `MMMM`: Full month name (e.g. January)  
+  - `m`: Minutes, not padded (0 - 59)  
+  - `mm`: Minutes, padded (00 - 59)  
+  - `Y`: Full year  
+  - `YY`: Two-digit year  
+  - `h`: Civilian hours, not padded (0 - 12)  
+  - `hh`: Civilian hours, padded (00 - 12)  
+  - `H`: Military hours, not padded (0 - 24)  
+  - `HH`: Military hours, padded (00 - 24)  
+  - `s`: Seconds, not padded (0 - 59)  
+  - `ss`: Seconds, padded (00 - 59)
 
 #### Return value: [Text](../../guide/types/#text)
 

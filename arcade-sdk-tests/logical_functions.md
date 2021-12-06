@@ -16,20 +16,20 @@ These functions provide convenient one-line methods for evaluating expressions. 
 
 ## Decode
 
-### Decode( expression, [compare1, return1, ..., compareN, returnN]?, default? ) -> *
+### Decode( expression, [compare1, return1, ..., compareN, returnN]?, default? ) -> Any
 
 Evaluates an expression to a value and compares the result value with the value of subsequent parameters. If the expression evaluates to a matching value, it returns the subsequent parameter value. If no matches are found, then a `default` value may be provided. This is similar to a switch/case statement
 
 #### Parameters
 
-- **`expression`**: *  
+- **`expression`**: Any  
 An Arcade expression that must evaluate to a value that can be compared with the provided case values.
-- **`[compare1, return1, ..., compareN, returnN]`** (_Optional_): *  
+- **`[compare1, return1, ..., compareN, returnN]`** (_Optional_): Any  
 A set of compare values and return value pairs.
-- **`default`** (_Optional_): *  
+- **`default`** (_Optional_): Any  
 A default value to return if none of the compare values match. This may be a value of any type.
 
-#### Return value: *
+#### Return value: Any
 
 Returns the matched return value. If no matches are found, then the `default` value is returned.
 
@@ -46,18 +46,18 @@ var decodedValue = Decode(code, 1, 'Residential', 2, 'Commercial', 3, 'Mixed', '
 
 ## DefaultValue
 
-### DefaultValue( value, defaultValue? ) -> *
+### DefaultValue( value, defaultValue? ) -> Any
 
 Returns a specified default value if an empty value is detected.
 
 #### Parameters
 
-- **`value`**: *  
+- **`value`**: Any  
 The input value to compare against `null` or `''`. This may be a value of any type. However, if this value is an empty array, then the empty array will be returned.
-- **`defaultValue`** (_Optional_): *  
+- **`defaultValue`** (_Optional_): Any  
 Return this value if the provided `value` is empty. The data type of `defaultValue` must match the data type of `value`.
 
-#### Return value: *
+#### Return value: Any
 
 If `value` is empty, then the `defaultValue` is returned. Otherwise, the value of `value` is returned.
 
@@ -74,7 +74,7 @@ DefaultValue($feature.POP_2000, 'no data')
 
 ## IIf
 
-### IIf( condition, trueValue, falseValue ) -> *
+### IIf( condition, trueValue, falseValue ) -> Any
 
 Returns a given value if a conditional expression evaluates to `true`, and returns an alternate value if that condition evaluates to `false`.
 
@@ -82,12 +82,12 @@ Returns a given value if a conditional expression evaluates to `true`, and retur
 
 - **`condition`**: [Boolean](../../guide/types/#boolean)  
 A logical expression that must evaluate to `true` or `false`.
-- **`trueValue`**: *  
+- **`trueValue`**: Any  
 The value to return if the `condition` evaluates to `true`. This may be a value of any type.
-- **`falseValue`**: *  
+- **`falseValue`**: Any  
 The value to return if the `condition` evaluates to `false`. This may be a value of any type.
 
-#### Return value: *
+#### Return value: Any
 
 If `condition` is `true`, then the `trueValue` is returned. Otherwise, the value of `falseValue` is returned.
 
@@ -105,18 +105,18 @@ IIf(population < 1000000, 'below', 'above');
 
 ## When
 
-### When( [expression1, result1, ..., expressionN, resultN], defaultValue ) -> *
+### When( [expression1, result1, ..., expressionN, resultN], defaultValue ) -> Any
 
 Evaluates a series of conditional expressions until one evaluates to `true`.
 
 #### Parameters
 
-- **`[expression1, result1, ..., expressionN, resultN]`**: *  
+- **`[expression1, result1, ..., expressionN, resultN]`**: Any  
 A series of conditional expressions and return values if the given expression evaluates to `true`. This may be a value of any type.
-- **`defaultValue`**: *  
+- **`defaultValue`**: Any  
 Returns this value if all expressions evaluate to `false`. This may be a value of any type.
 
-#### Return value: *
+#### Return value: Any
 
 #### Example
 
