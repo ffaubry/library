@@ -81,7 +81,7 @@ Indicates whether all of the elements in a given array pass a test from the prov
 - **`array`**: [Array](../../guide/types/#array)  
 The input array to test.
 - **`testFunction`**: [Function](../../guide/logic/#user-defined-functions)  
-The function used to test each element in the `inputArray`. The The function must return a truthy value if the element passes the test. The function can be a user-defined function or a core Arcade function defined with the following parameter:
+The function used to test each element in the array. The function must return a truthy value if the element passes the test. The function can be a user-defined function or a core Arcade function defined with the following parameter:
 
   - **`value`**: *  
 Represents the value of an element in the array.
@@ -400,7 +400,7 @@ Count($layer)
 This function has 2 signatures:
 
 - [Dictionary( name1, value1, [name2, value2, ..., nameN, valueN]? ) -> Dictionary](#dictionary1)
-- [Dictionary( definition ) -> Dictionary](#dictionary2)
+- [Dictionary( jsonText ) -> Dictionary](#dictionary2)
 
 <a name="dictionary1"></a>
 ### Dictionary( name1, value1, [name2, value2, ..., nameN, valueN]? ) -> [Dictionary](../../guide/types/#dictionary)
@@ -413,7 +413,7 @@ Returns a new dictionary based on the provided arguments. The arguments are name
 The attribute name.
 - **`value1`**: *  
 The attribute value to pair to `name1`.
-- **`[name2, value2, ..., nameN, valueN]`** (_Optional_): [Text](../../guide/types/#text) \| *  
+- **`[name2, value2, ..., nameN, valueN]`** (_Optional_): *  
 Ongoing name/value pairs.
 
 #### Return value: [Dictionary](../../guide/types/#dictionary)
@@ -429,7 +429,7 @@ return d.field1 + d.field2
 
 
 <a name="dictionary2"></a>
-### Dictionary( definition ) -> [Dictionary](../../guide/types/#dictionary)
+### Dictionary( jsonText ) -> [Dictionary](../../guide/types/#dictionary)
 
 **[Since version 1.8](../../guide/version-matrix)**
 
@@ -437,7 +437,7 @@ Returns a new dictionary from stringified JSON.
 
 #### Parameters
 
-- **`definition`**: [Text](../../guide/types/#text)  
+- **`jsonText`**: [Text](../../guide/types/#text)  
 The stringified JSON to convert to an Arcade dictionary.
 
 #### Return value: [Dictionary](../../guide/types/#dictionary)
@@ -818,6 +818,8 @@ The array to remove the value from.
 - **`index`**: [Number](../../guide/types/#number)  
 The index of the value to remove from the array. If a negative index is provided, it will be used as an offset from the end of the array.
 
+#### Return value: Null
+
 #### Example
 
 ```arcade
@@ -968,7 +970,8 @@ Ongoing name/value pairs for each attribute in the feature.
 Feature(pointGeometry, 'city_name', 'Spokane', 'population', 210721)
 ```
 
-###### Create a feature from another feature.
+Create a feature from another feature.
+
 ```arcade
 var dict = { hello:10 }
 var p = point({x:10, y:20, spatialReference:{wkid:102100}})
@@ -976,7 +979,8 @@ var ftr1 = Feature(p,dict)
 var ftr2 = Feature(ftr1)
 ```
 
-###### Create a feature from a JSON string.
+Create a feature from a JSON string.
+
 ```arcade
 var JSONString = "{'geometry':{'x':10,'y':20,'spatialReference':{'wkid':102100}},'attributes':{'hello':10}}"
 Feature(JSONString)
@@ -1004,7 +1008,8 @@ The JSON describing a set of features. The JSON must be contained in a text valu
 
 #### Example
 
-###### Create a FeatureSet from JSON.
+Create a FeatureSet from JSON.
+
 ```arcade
 // JSON representation of the feature used in the snippet below
 // {
@@ -1053,10 +1058,9 @@ Returns all the features associated with the input feature as a FeatureSet. This
 - **`feature`**: [Feature](../../guide/types/#feature)  
 The feature from which to query for all associated features. This feature must be coming from a feature service; feature collections are not supported.
 - **`associationType`**: [Text](../../guide/types/#text)  
-The type of association with the feature to be returned.
-
- **Possible Values:** `connected` \| `container` \| `content` \| `structure` \| `attached`  
- Added at 1.10: `junctionEdge` \| `midspan`
+The type of association with the feature to be returned.  
+Possible Values: `connected` \| `container` \| `content` \| `structure` \| `attached`  
+Added at 1.10: `junctionEdge` \| `midspan`
 - **`terminalName`** (_Optional_): [Text](../../guide/types/#text)  
 Only applicable to `connected` association types.
 
@@ -1077,16 +1081,18 @@ Applies to `midspan` association types. Returns a floating point number from 0-1
 - **`side`**: [Text](../../guide/types/#text)  
 Applies to `junctionEdge` association types. Indicates which side the junction is on.
 
- **Possible values:** `from` \| `to`
+**Possible values:** `from` \| `to`
 
 #### Example
 
-###### Returns all assets that have connectivity associations with the low side terminal of the transformer.
+Returns all assets that have connectivity associations with the low side terminal of the transformer.
+
 ```arcade
 FeatureSetByAssociation($feature, 'connected', 'Low');
 ```
 
-###### Returns the number of electric devices associated with the feature
+Returns the number of electric devices associated with the feature
+
 ```arcade
 var allContent = FeatureSetByAssociation ($feature, "content");
 var devicesRows = Filter(allContent, "className = 'Electric Device'");
@@ -1122,7 +1128,8 @@ Indicates whether to include the geometry in the features. By default, this is `
 
 #### Example
 
-###### Returns the number of features in the layer with the id DemoLayerWM_1117 in the given map.
+Returns the number of features in the layer with the id DemoLayerWM_1117 in the given map.
+
 ```arcade
 var features = FeatureSetById($map,'DemoLayerWM_1117', ['*'], true);
 Count( features );
@@ -1156,7 +1163,8 @@ Indicates whether to include the geometry in the features. By default, this is `
 
 #### Example
 
-###### Returns the number of features in the layer with the title 'Bike routes' in the given map.
+Returns the number of features in the layer with the title 'Bike routes' in the given map.
+
 ```arcade
 var features = FeatureSetByName($map,'Bike routes', ['*'], true);
 Count(features);
@@ -1192,7 +1200,8 @@ Indicates whether to include the geometry in the features. For performance reaso
 
 #### Example
 
-###### Returns the number of features in the layer from a different portal than the feature in the map
+Returns the number of features in the layer from a different portal than the feature in the map.
+
 ```arcade
 var features = FeatureSetByPortalItem(
   Portal('https://www.arcgis.com'),
@@ -1232,7 +1241,8 @@ Indicates whether to return the geometry for the resulting features.
 
 #### Example
 
-###### Returns the sum of several fields across all related records
+Returns the sum of several fields across all related records
+
 ```arcade
 var results = FeatureSetByRelationshipName($feature, 'Election_Results', ['*'], false)
 Sum(results, 'democrat + republican + other')
@@ -1268,13 +1278,15 @@ The SQL92 expression used to filter features in the layer. This expression can s
 
 #### Example
 
-###### Filter features using a SQL92 expression
+Filter features using a SQL92 expression
+
 ```arcade
 // Returns all features with a Population greater than 10,000
 var result = Filter($layer, 'POPULATION > 10000');
 ```
 
-###### Filter features using a SQL92 expression with a variable substitute
+Filter features using a SQL92 expression with a variable substitute
+
 ```arcade
 // Returns all features with a Population greater than the dataset average
 var averageValue = Average($layer, 'POPULATION')
@@ -1294,15 +1306,14 @@ Creates a new array with the elements filtered from the input array that pass a 
 - **`array`**: [Array](../../guide/types/#array)  
 The input array to filter.
 - **`filterFunction`**: [Function](../../guide/logic/#user-defined-functions)  
-The function used to filter elements in the array. This must be a user-defined function or a core Arcade function defined with the following parameters:
+The function used to filter elements in the array. The The function must return a truthy value if the element passes the test. This function can be a user-defined function or a core Arcade function defined with the following parameter:
 
- **Parameters**  
- `value`: Represents the value of an element in the array.
-
- **Return value**  
- The function must return either `true` or `false` indicating whether to include a value in the output array.
+  - **`value`**: *  
+Represents the value of an element in the array.
 
 #### Return value: [Array](../../guide/types/#array)
+
+Returns an array with the elements that passe the test function.
 
 #### Example
 
@@ -1508,16 +1519,20 @@ Gets the FeatureSet in which the input feature belongs. The returned FeatureSet 
 - **`feature`**: [Feature](../../guide/types/#feature)  
 The feature belonging to a parent or root FeatureSet.
 - **`source`** (_Optional_): [Text](../../guide/types/#text)  
-Indicates the source FeatureSet to return.
+Indicates the source FeatureSet to return.  
+Possible Values:
 
- **Possible Values:**  
- - `datasource` - (default) Returns all the features from the input feature's data source without any filters or definition expressions as a FeatureSet. - `root` - Returns the initial FeatureSet to which the input feature belongs. This may be a filtered subset of all the features in the data source. - `parent` - Returns the parent FeatureSet of the input feature. This can be a smaller set of features than the original data source or root FeatureSet.
+  - `datasource`: (default) Returns all the features from the input feature's data source without any filters or definition expressions as a FeatureSet.  
+  - `root`: Returns the initial FeatureSet to which the input feature belongs. This may be a filtered subset of all the features in the data source.  
+  - `parent`: Returns the parent FeatureSet of the input feature. This can be a smaller set of features than the original data source or root FeatureSet.  
+
 
 #### Return value: [FeatureSet](../../guide/types/#featureset)
 
 #### Example
 
-###### Returns a FeatureSet representing all the features in the data source.
+Returns a FeatureSet representing all the features in the data source.
+
 ```arcade
 // The data source for the 'Bike routes' layer has 2,000 features. 
 // The map sets a definition expression on the 'Bike routes' layer and filters it to 100 features.
@@ -1528,7 +1543,8 @@ GetFeatureSet(f)
 // returns a FeatureSet representing the data source with 2,000 features
 ```
 
-###### Returns the root FeatureSet of the feature.
+Returns the root FeatureSet of the feature.
+
 ```arcade
 // The data source for the 'Bike routes' layer has 2,000 features. 
 // The map sets a definition expression on the 'Bike routes' layer and filters it to 100 features.
@@ -1539,7 +1555,8 @@ GetFeatureSet(f, 'root')
 // returns the root FeatureSet representing 100 features
 ```
 
-###### Returns the parent FeatureSet of the feature.
+Returns the parent FeatureSet of the feature.
+
 ```arcade
 // The data source for the 'Bike routes' layer has 2,000 features. 
 // The map sets a definition expression on the 'Bike routes' layer and filters it to 100 features.
@@ -1550,7 +1567,8 @@ GetFeatureSet(f, 'parent')
 // returns the parent FeatureSet representing 10 features
 ```
 
-###### Returns the number of features in the data source table within 1 mile of the feature.
+Returns the number of features in the data source table within 1 mile of the feature.
+
 ```arcade
 var fullFeatureSet = GetFeatureSet($feature);
 var featuresOneMile = Intersects(fullFeatureSet, BufferGeodetic($feature, 1, 'miles'))
@@ -1767,13 +1785,22 @@ Returns statistics as a FeatureSet for a set of grouped or distinct values.
 - **`features`**: [FeatureSet](../../guide/types/#featureset)  
 A FeatureSet from which to return statistics for unique values returned from a given set of fields and/or expressions.
 - **`groupByFields`**: [Text](../../guide/types/#text) \| [Text[]](../../guide/types/#text) \| [Dictionary[]](../../guide/types/#dictionary)  
-The field(s) and/or expression(s) from which to group statistics by unique values. This parameter can be a single field name, an array of field names, or an array of objects that specify column names paired with an expression (typically the field name) for the output FeatureSet. If an array of objects is specified, the following specification must be followed for each object.
+The field(s) and/or expression(s) from which to group statistics by unique values. This parameter can be a single field name, an array of field names, or an array of objects that specify column names paired with an expression (typically the field name) for the output FeatureSet. If an array of objects is specified, the following specification must be followed for each object:
 
- | Property | Description | | :--- | :--- | | name | The name of the column to store the result of the given expression. | | expression | A SQL-92 expression from which to group statistics. This is typically a field name. |
+  - **`name`**: [Text](../../guide/types/#text)  
+The name of the column to store the result of the given expression.
+  - **`expression`**: [Text](../../guide/types/#text)  
+A SQL-92 expression from which to group statistics. This is typically a field name.
 - **`statistics`**: [Dictionary](../../guide/types/#dictionary) \| [Dictionary[]](../../guide/types/#dictionary)  
-The summary statistics to calculate for each group. This parameter can be an object or array of objects that specify output statistics to return for each group. The specification in the following table must be used.
+The summary statistics to calculate for each group. This parameter can be a dictionary or array of dictionary that specify output statistics to return for each group. The following specification must be used:
 
- | Property | Description | | :------- | :---------- | | name | The name of the column to store the result of the given statistical query in the output FeatureSet. | | expression | A SQL-92 expression or field name from which to query statistics. | | statistic | The statistic type to query for the given field or expression. **Possible Values:**  SUM \| COUNT \| MIN \| MAX \| AVG \| STDEV \| VAR |
+  - **`name`**: [Text](../../guide/types/#text)  
+The name of the column to store the result of the given statistical query in the output FeatureSet.
+  - **`expression`**: [Text](../../guide/types/#text)  
+A SQL-92 expression or field name from which to query statistics.
+  - **`statistic`**: [Text](../../guide/types/#text)  
+The statistic type to query for the given field or expression.  
+Possible Values: SUM \| COUNT \| MIN \| MAX \| AVG \| STDEV \| VAR
 
 #### Return value: [FeatureSet](../../guide/types/#featureset)
 
@@ -1819,9 +1846,8 @@ Returns a random GUID as a string.
 #### Parameters
 
 - **`guidFormat`** (_Optional_): [Text](../../guide/types/#text)  
-An named format for the GUID. The default value is `digits-hyphen-braces`.
-
- **Possible Values:** digits / digits-hyphen / digits-hyphen-braces / digits-hyphen-parentheses
+An named format for the GUID. The default value is `digits-hyphen-braces`.  
+Possible Values: digits / digits-hyphen / digits-hyphen-braces / digits-hyphen-parentheses
 
 #### Return value: [Text](../../guide/types/#text)
 
@@ -1870,15 +1896,15 @@ Hash('text value')
 
 ## HasKey
 
-### HasKey( dictionaryOrFeature, keyOrFieldName ) -> [Boolean](../../guide/types/#boolean)
+### HasKey( value, key ) -> [Boolean](../../guide/types/#boolean)
 
 Indicates whether a dictionary or feature has the input key.
 
 #### Parameters
 
-- **`dictionaryOrFeature`**: [Dictionary](../../guide/types/#dictionary) \| [Feature](../../guide/types/#feature)  
+- **`value`**: [Dictionary](../../guide/types/#dictionary) \| [Feature](../../guide/types/#feature)  
 The dictionary or feature to check for a key or field name.
-- **`keyOrFieldName`**: [Text](../../guide/types/#text)  
+- **`key`**: [Text](../../guide/types/#text)  
 The key or field name to check.
 
 #### Return value: [Boolean](../../guide/types/#boolean)
@@ -1973,6 +1999,8 @@ The index of the array where the new value should be inserted. An index of 0 wil
 - **`value`**: *  
 The value to insert into the array.
 
+#### Return value: Null
+
 #### Example
 
 ```arcade
@@ -2061,15 +2089,14 @@ Creates a new array based on results of calling a provided function on each elem
 - **`array`**: [Array](../../guide/types/#array)  
 The input array to map.
 - **`mappingFunction`**: [Function](../../guide/logic/#user-defined-functions)  
-The function to call on each element in the provided array. This must be a user-defined function or a core Arcade function defined with the following parameters:
+The function to call on each element in the provided array. The function must return a new item that will be part of the returned array. The function can be a user-defined function or a core Arcade function defined with the following parameter:
 
- **Parameters**  
- `value`: Represents the value of an element in the array.
-
- **Return value**  
- The function may return any value in the output array.
+  - **`value`**: *  
+Represents the value of an element in the array.
 
 #### Return value: [Array](../../guide/types/#array)
+
+The items returned by the mapping function.
 
 #### Example
 
@@ -2140,14 +2167,14 @@ Tests whether none of the elements in a given array pass a test from the provide
 - **`array`**: [Array](../../guide/types/#array)  
 The input array to test.
 - **`testFunction`**: [Function](../../guide/logic/#user-defined-functions)  
-The function to test each element in the `inputArray`. This must be a user-defined function or a core Arcade function defined with the following parameters:
+The function to test each element in the array. The function must return a falsy value if the element doesn't pass the test. The function can be a user-defined function or a core Arcade function defined with the following parameter:
 
- **Parameters**  : `value`: Represents the value of an element in the array.
-
- **Return value**  
- The function must return either `true` or `false` indicating whether the element passed or failed the test.
+  - **`value`**: *  
+Represents the value of an element in the array.
 
 #### Return value: [Boolean](../../guide/types/#boolean)
+
+`true` if all the elements in the array don't pass the test function.
 
 #### Example
 
@@ -2185,61 +2212,57 @@ Parses the input value to a number.
 - **`value`**: *  
 The value to convert to a number.
 - **`pattern`** (_Optional_): [Text](../../guide/types/#text)  
-The format pattern string used to parse numbers formatted in a localized context from a string value to a number. The table below describes the characters that may be used in the pattern.
+The format pattern string used to parse numbers formatted in a localized context from a string value to a number. Sepcial characters to define the pattern:
 
- | **Value** | **Description** | | :--- | :--- | | 0 | Mandatory digits | | # | Optional digits | | % | Divide by 100 |
+  - 0: Mandatory digits  
+  - #: Optional digits  
+  - %: Divide by 100  
+
 
 #### Return value: [Number](../../guide/types/#number)
 
 #### Example
 
-###### Parses a number using a grouping separator appropriate for the local in which the expression is executed
-returns 1365
+Parses a number using a grouping separator appropriate for the local in which the expression is executed
 
 ```arcade
-Number('1,365', ',###')
+Number('1,365', ',###') // returns 1365
 ```
 
-###### Remove strings from number.
-prints 10
+Remove strings from number.
 
 ```arcade
-Number('abc10def', 'abc##def')
+Number('abc10def', 'abc##def') // return 10
 ```
 
-###### Specify minimum digits past 0 as two and maximum digits past 0 as 4.
-prints 10.456
+Specify minimum digits past 0 as two and maximum digits past 0 as 4.
 
 ```arcade
-Number('10.456','00.00##')
+Number('10.456','00.00##') // returns 10.456
 ```
 
-###### Specify minimum digits past 0 as two and maximum digits past 0 as 4. The left and right side of the function must match or NaN is returned.
-prints NaN
+Specify minimum digits past 0 as two and maximum digits past 0 as 4. The left and right side of the function must match or NaN is returned.
 
 ```arcade
-Number('10.4','00.00##')
+Number('10.4','00.00##') // returns NaN
 ```
 
-###### Indicate the size of the repeated group and the final group size of the input value.
-prints 1212456
+Indicate the size of the repeated group and the final group size of the input value.
 
 ```arcade
-Number('12,12,456', ',##,###')
+Number('12,12,456', ',##,###') // returns 1212456
 ```
 
-###### If there is a negative subpattern, it serves only to specify the negative prefix and suffix.
-prints -1223345
+If there is a negative subpattern, it serves only to specify the negative prefix and suffix.
 
 ```arcade
-Number('-12,23,345', ',##,###;-,##,###')
+Number('-12,23,345', ',##,###;-,##,###') // returns -1223345
 ```
 
-###### Divide by 100. Maximum of three decimal places can be input.
-prints 0.9999
+Divide by 100. Maximum of three decimal places can be input.
 
 ```arcade
-Number('99.99%', '#.##%')
+Number('99.99%', '#.##%') // 0.9999
 ```
 
 
@@ -2266,12 +2289,14 @@ The SQL92 expression used to order features in the layer.
 
 #### Example
 
-###### Order features by population where features with the highest population are listed first
+Order features by population where features with the highest population are listed first
+
 ```arcade
 OrderBy($layer, 'POPULATION DESC')
 ```
 
-###### Order features by rank in ascending order
+Order features by rank in ascending order
+
 ```arcade
 OrderBy($layer, 'Rank ASC')
 ```
@@ -2383,16 +2408,16 @@ The input array to reduce.
 - **`reducerFunction`**: [Function](../../guide/logic/#user-defined-functions)  
 The reducer function.
 
- **Parameters**  
- **`previousValue`:** The previous value returned from the `reducerFunction`. The first time the function executes, this will be the first element in the `inputArray` (or the `initialValue`, if provided).  
- **`arrayValue`:** Represents the current value of an element in the `inputArray`.
-
- **Return value**  
- Returns a value that will be passed back into the function as the `previousValue` parameter.
+  - **`previousValue`**: *  
+The first time the function executes, this will be the first element in the input array or the `initialValue`, if provided.
+  - **`arrayValue`**: *  
+Represents the current value of an element in the input array.
 - **`initialValue`** (_Optional_): *  
 An item to pass into the first argument of the reducer function.
 
 #### Return value: *
+
+The value that was assembled by the reducer function for each element in the array.
 
 #### Example
 
@@ -2416,7 +2441,7 @@ var cities = [{
 // The subsequent times the function is executed, it will take the return value
 // from the previous function call as x and the next array value as y
 function mostPopulated(city1, city2) {
-   iif (city1.pop > city2.pop, city1, city2)
+   IIf (city1.pop > city2.pop, city1, city2)
 }
 var largestCity = Reduce(cities, mostPopulated)
 Console(largestCity.name + ' is the biggest city in the list with a population of ' + largestCity.pop)
@@ -2455,6 +2480,8 @@ The array to be resized.
 The number of elements desired in the resized array.
 - **`value`** (_Optional_): *  
 The optional value that will be used for any new elements added to the array. If no value is specified, the newly added elements will have a `null` value.
+
+#### Return value: Null
 
 #### Example
 
@@ -2537,9 +2564,8 @@ Returns a dictionary described by the properties below.
 - **`fields`**: [Dictionary[]](../../guide/types/#dictionary)  
 Returns an array of dictionaries describing the fields in the Feature. Each dictionary describes the field `name`, `alias`, `type`, `subtype`, `domain`, `length`, and whether it is `editable` and `nullable`.
 - **`geometryType`**: [Text](../../guide/types/#text)  
-The geometry type of features in the Feature. Returns `esriGeometryNull` for tables with no geometry.
-
- **Possible values:** `esriGeometryPoint`, `esriGeometryLine`, `esriGeometryPolygon`, `esriGeometryNull`
+The geometry type of features in the Feature. Returns `esriGeometryNull` for tables with no geometry.  
+Possible values: `esriGeometryPoint`, `esriGeometryLine`, `esriGeometryPolygon`, `esriGeometryNull`
 - **`globalIdField`**: [Text](../../guide/types/#text)  
 The global ID field of the Feature. Returns `""` if not globalId-enabled.
 - **`objectIdField`**: [Text](../../guide/types/#text)  
@@ -2567,9 +2593,8 @@ The objectId field of the FeatureSet.
 - **`globalIdField`**: [Text](../../guide/types/#text)  
 The global ID field of the FeatureSet. Returns `""` if not globalId-enabled.
 - **`geometryType`**: [Text](../../guide/types/#text)  
-The geometry type of features in the FeatureSet. Returns `esriGeometryNull` for tables with no geometry.
-
- **Possible values:** `esriGeometryPoint`, `esriGeometryLine`, `esriGeometryPolygon`, `esriGeometryNull`
+The geometry type of features in the FeatureSet. Returns `esriGeometryNull` for tables with no geometry.  
+Possible values: `esriGeometryPoint`, `esriGeometryLine`, `esriGeometryPolygon`, `esriGeometryNull`
 - **`fields`**: [Dictionary[]](../../guide/types/#dictionary)  
 Returns an array of dictionaries describing the fields in the FeatureSet. Each dictionary describes the field `name`, `alias`, `type`, `subtype`, `domain`, `length`, and whether it is `editable` and `nullable`.
 ---------------------
@@ -2633,14 +2658,15 @@ Sorts an array by ASCII value. If all the items in the array are the same type, 
 - **`array`**: [Array](../../guide/types/#array)  
 The array to sort.
 - **`comparatorFunction`** (_Optional_): [Function](../../guide/logic/#user-defined-functions)  
-A user defined function to be used for the sort.
+A user defined function to be used for the sort. The function receives two elements and should retun a number that indicates the sorting order of the two elements:  
+`> 0`: sort `b` before `a`  
+`= 0`: keep the original order of `a` and `b`  
+`< 0`: sort `a` before `b`
 
- **Parameters**  
- **`a`:** The first element for comparison.  
- **`b`:** The second element for comparison.
-
- **Return value**  
- **`number`:** A number indicating how `a` and `b` should be sorted. If the number is > 0, sort `b` before `a`. If < 0, sort `a` before `b`. If 0 is returned, keep the original order of `a` and `b`.
+  - **`a`**: *  
+The first element for comparison.
+  - **`b`**: *  
+The second element for comparison.
 
 #### Return value: [Array](../../guide/types/#array)
 
@@ -2652,8 +2678,7 @@ returns `['$', 1, 'A', 'a']`
 Sort([1, 'a', '$', 'A'])
 ```
 
-###### Sort using a user defined function
-returns '[{ 'AGE': 24, 'NAME': 'Emma' }, { 'AGE': 25, 'NAME': 'Sam' }, { 'AGE': 27, 'NAME': 'Bob' } ]'
+Sort using a user defined function
 
 ```arcade
 var peopleArray = [{ 'NAME': 'Sam', 'AGE': 25 }, {'NAME': 'Bob', 'AGE': 27 },{ 'NAME': 'Emma', 'AGE': 24 }];
@@ -2665,6 +2690,7 @@ function compareAge(a,b){
   return 0;
 }
 return Sort(peopleArray, compareAge);
+// returns '[{ 'AGE': 24, 'NAME': 'Emma' }, { 'AGE': 25, 'NAME': 'Sam' }, { 'AGE': 27, 'NAME': 'Bob' } ]'
 ```
 
 
@@ -2865,12 +2891,14 @@ The value to be converted to a hexidecimal value.
 
 #### Example
 
-###### Returns `"64"`.
+Returns `"64"`.
+
 ```arcade
 ToHex(100)
 ```
 
-###### Returns the hexidecimal representation for the color royal blue, `"#4169E1"`, from its RGB values
+Returns the hexidecimal representation for the color royal blue, `"#4169E1"`, from its RGB values
+
 ```arcade
 var r = ToHex(65); // returns "41"
 var g = ToHex(105); // returns "69"
@@ -2907,7 +2935,8 @@ The number of items to return from the beginning of the array.
 
 #### Example
 
-###### returns `[ 43,32,19 ]`
+returns `[ 43,32,19 ]`
+
 ```arcade
 Top([ 43,32,19,0,3,55 ], 3)
 ```
@@ -2931,7 +2960,8 @@ The number of features to return from the beginning of the FeatureSet.
 
 #### Example
 
-###### Returns the top 5 features with the highest population
+Returns the top 5 features with the highest population
+
 ```arcade
 Top( OrderBy($layer, 'POPULATION DESC'), 5 )
 ```

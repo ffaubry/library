@@ -65,15 +65,13 @@ The millisecond of the second (0-999).
 
 #### Example
 
-###### Year, month, day
-prints 'Tue Jun 02 1987 00:00:00 GMT-0700 (PDT)'
+Year, month, day
 
 ```arcade
-Date(1987,05,02)
+Date(1987,05,02) // 'Tue Jun 02 1987 00:00:00 GMT-0700 (PDT)'
 ```
 
-###### With no parameters
-prints the current date and time
+Prints the current date and time
 
 ```arcade
 Date()
@@ -94,18 +92,16 @@ The number of milliseconds since January 1, 1970 UTC.
 
 #### Example
 
-###### Create a date with the value of a date field
-returns a date object based on a field value
+Returns a date object based on a field value
 
 ```arcade
 var recordDate = Date($feature.dateField)
 ```
 
-###### Milliseconds since epoch
-prints 'Thu Oct 20 2016 11:23:03 GMT-0700 (PDT)'
+Milliseconds since epoch
 
 ```arcade
-Date(1476987783555)
+Date(1476987783555) // 'Thu Oct 20 2016 11:23:03 GMT-0700 (PDT)'
 ```
 
 
@@ -123,11 +119,10 @@ An ISO 8601 string to be converted into a date.
 
 #### Example
 
-###### ISO 8601 string
-prints 'Thu Oct 20 2016 10:41:37 GMT-0700 (PDT)'
+ISO 8601 string
 
 ```arcade
-Date('2016-10-20T17:41:37+00:00')
+Date('2016-10-20T17:41:37+00:00') // 'Thu Oct 20 2016 10:41:37 GMT-0700 (PDT)'
 ```
 
 
@@ -152,7 +147,8 @@ The units of the number to add to the date. The supported unit types include `mi
 
 #### Example
 
-###### Adds 7 days to the date in the provided field
+Adds 7 days to the date in the provided field
+
 ```arcade
 var startDate = Date($feature.dateField);
 var oneWeekLater = DateAdd(startDate, 7, 'days');
@@ -181,7 +177,8 @@ The units in which to return the difference of the two given dates. The supporte
 
 #### Example
 
-###### Subtracts two dates and returns the age
+Subtracts two dates and returns the age
+
 ```arcade
 var startDate = Date($feature.startDateField);
 var endDate = Date($feature.endDateField);
@@ -207,7 +204,8 @@ A date value from which to get the day of the month.
 
 #### Example
 
-###### Gets the day of the month of the current date
+Gets the day of the month of the current date
+
 ```arcade
 Day(Now())
 ```
@@ -230,7 +228,8 @@ A date value from which to get the hour of the time.
 
 #### Example
 
-###### Gets the hour of the current time
+Gets the hour of the current time
+
 ```arcade
 Hour(Now())
 ```
@@ -255,7 +254,8 @@ A date value from which to get the month.
 
 #### Example
 
-###### Gets the month of the given date, based on the ISO 8601 standard. Returns `12`, for the month of December.
+Gets the month of the given date, based on the ISO 8601 standard. Returns `12`, for the month of December.
+
 ```arcade
 ISOMonth(Date(1980, 11, 31))
 ```
@@ -280,7 +280,8 @@ A date value from which to get the week.
 
 #### Example
 
-###### Gets the week of the given date, based on the ISO 8601 standard. Returns `1`, since this date is included in the first week of the following year.
+Gets the week of the given date, based on the ISO 8601 standard. Returns `1`, since this date is included in the first week of the following year.
+
 ```arcade
 ISOWeek(Date(1980, 11, 31))
 ```
@@ -305,7 +306,8 @@ A date value from which to return the day of the week.
 
 #### Example
 
-###### Returns the day of the week of the given date, based on the ISO 8601 standard. Returns `3`, for Wednesday.
+Returns the day of the week of the given date, based on the ISO 8601 standard. Returns `3`, for Wednesday.
+
 ```arcade
 ISOWeekday(Date(1980, 11, 31))
 ```
@@ -330,7 +332,8 @@ A date value from which to get the year.
 
 #### Example
 
-###### Gets the year of the given date, based on the ISO 8601 week date calendar. Returns `1981`, since this date is included in the first week of the following year.
+Gets the year of the given date, based on the ISO 8601 week date calendar. Returns `1981`, since this date is included in the first week of the following year.
+
 ```arcade
 ISOYear(Date(1980, 11, 31))
 ```
@@ -353,7 +356,8 @@ A date value from which to get the millisecond of the time.
 
 #### Example
 
-###### Gets the millisecond of the current time
+Gets the millisecond of the current time
+
 ```arcade
 Millisecond(Now())
 ```
@@ -376,7 +380,8 @@ A date value from which to get the minute of the time.
 
 #### Example
 
-###### Gets the minute of the current time
+Gets the minute of the current time
+
 ```arcade
 Minute(Now())
 ```
@@ -399,7 +404,8 @@ A date value from which to get the month.
 
 #### Example
 
-###### Gets the month of the given Date. Returns 11, for the month of December.
+Gets the month of the given Date. Returns 11, for the month of December.
+
 ```arcade
 Month(Date(1980, 11, 31))
 ```
@@ -417,8 +423,7 @@ Returns the current date and time in the local time of the client.
 
 #### Example
 
-###### Returns the current date and time
-e.g. Mon Oct 24 2016 12:09:34 GMT-0700 (PDT)
+Returns the current date and time, e.g. Mon Oct 24 2016 12:09:34 GMT-0700 (PDT)
 
 ```arcade
 Now()
@@ -442,7 +447,8 @@ A date value from which to get the second of the time.
 
 #### Example
 
-###### Gets the second of the current time
+Gets the second of the current time
+
 ```arcade
 Second(Now())
 ```
@@ -462,8 +468,7 @@ Returns the current date and time in UTC time.
 
 #### Example
 
-###### Returns the current date and time in UTC time
-e.g. 29 Mar 2017 08:37:33 pm
+Returns the current date and time in UTC time, e.g. 29 Mar 2017 08:37:33 pm
 
 ```arcade
 Timestamp()
@@ -482,8 +487,7 @@ Returns the current date in the local time of the client.
 
 #### Example
 
-###### Returns the current date with time truncated
-e.g. Mon Oct 24 2016 00:00:00 GMT-0700 (PDT)
+Returns the current date with time truncated, e.g. Mon Oct 24 2016 00:00:00 GMT-0700 (PDT)
 
 ```arcade
 Today()
@@ -509,8 +513,7 @@ A UTC date value to convert to the local time of the client. This value is assum
 
 #### Example
 
-###### Convert a UTC date to the local time of the client running the app
-e.g. Mon Oct 24 2016 00:00:00 GMT-0700 (PDT)
+Convert a UTC date to the local time of the client running the app, e.g. Mon Oct 24 2016 00:00:00 GMT-0700 (PDT)
 
 ```arcade
 ToLocal(Timestamp())
@@ -536,8 +539,7 @@ A date value in local time to convert to UTC time. This value is assumed to be i
 
 #### Example
 
-###### Returns the current date and time in UTC
-e.g. 29 Mar 2017 08:37:33 pm
+Returns the current date and time in UTC, e.g. 29 Mar 2017 08:37:33 pm
 
 ```arcade
 // 29 Mar 2017 01:37:33 pm
@@ -617,7 +619,8 @@ A date value from which to return the day of the week.
 
 #### Example
 
-###### Returns the day of the week of the given date. Returns `3`, for Wednesday.
+Returns the day of the week of the given date. Returns `3`, for Wednesday.
+
 ```arcade
 Weekday(Date(1980, 11, 31))
 ```
@@ -640,7 +643,8 @@ A date value from which to get the year.
 
 #### Example
 
-###### Gets the year of the current date
+Gets the year of the current date
+
 ```arcade
 Year(Now())
 ```
