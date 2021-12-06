@@ -40,7 +40,7 @@ Functions for performing mathematical operations.
 
 Returns the absolute value of a number. If the input is `null`, then it returns 0.
 
-#### Parameters
+#### Parameter
 
 - **`value`**: [Number](../../guide/types/#number)  
 A number on which to perform the operation.
@@ -64,7 +64,7 @@ Abs(-3)
 
 Returns the arccosine of the input value in radians, in the range of zero to PI. If the input value is outside the appropriate range of +/- 1, then NaN is returned.
 
-#### Parameters
+#### Parameter
 
 - **`value`**: [Number](../../guide/types/#number)  
 A number between -1 and 1 on which to perform the operation.
@@ -88,7 +88,7 @@ Acos(0.3)
 
 Returns the arcsine of the input value in radians, in the range of -PI/2 and PI/2. If the input value is outside the appropriate range of +/- 1, then NaN is returned.
 
-#### Parameters
+#### Parameter
 
 - **`value`**: [Number](../../guide/types/#number)  
 A number between -1 and 1 on which to perform the operation.
@@ -112,7 +112,7 @@ Asin(0.3)
 
 Returns the arctangent of the input value in radians, in the range of -PI/2 and PI/2.
 
-#### Parameters
+#### Parameter
 
 - **`value`**: [Number](../../guide/types/#number)  
 A number on which to perform the operation.
@@ -168,7 +168,7 @@ This function has 2 signatures:
 
 Returns the average of a set of numbers.
 
-#### Parameters
+#### Parameter
 
 - **`numbers`**: [Number[]](../../guide/types/#number)  
 A list or array of numbers on which to perform the operation.
@@ -199,7 +199,7 @@ Specifies the name of a numeric field or SQL92 expression for which the statisti
 
 #### Return value: [Number](../../guide/types/#number)
 
-#### Example
+#### Examples
 
 calculates the difference between the feature's population and the average population of all features in the layer
 
@@ -261,7 +261,7 @@ The upper bound by which to constrain the input `value`. If the given value is g
 
 #### Return value: [Number](../../guide/types/#number)
 
-#### Example
+#### Examples
 
 returns 5
 
@@ -290,7 +290,7 @@ Constrain(553, 0, 10)
 
 Returns the cosine of the input value in radians.
 
-#### Parameters
+#### Parameter
 
 - **`value`**: [Number](../../guide/types/#number)  
 A number in radians on which to perform the operation.
@@ -314,7 +314,7 @@ Cos(1)
 
 Returns the value of e to the power of x, where e is the base of the natural logarithm `2.718281828`.
 
-#### Parameters
+#### Parameter
 
 - **`x`**: [Number](../../guide/types/#number)  
 The power, or number of times to multiply `e` to itself.
@@ -364,7 +364,7 @@ Floor(2316.2562, 2)
 
 Returns the natural logarithm (base e) of x.
 
-#### Parameters
+#### Parameter
 
 - **`x`**: [Number](../../guide/types/#number)  
 A number on which to perform the operation.
@@ -394,14 +394,14 @@ This function has 2 signatures:
 
 Returns the highest value from an array of numbers.
 
-#### Parameters
+#### Parameter
 
 - **`numbers`**: [Number[]](../../guide/types/#number)  
 An array or list of numbers.
 
 #### Return value: [Number](../../guide/types/#number)
 
-#### Example
+#### Examples
 
 prints 89
 
@@ -430,7 +430,7 @@ Specifies the name of a numeric field or SQL92 expression for which the statisti
 
 #### Return value: [Number](../../guide/types/#number)
 
-#### Example
+#### Examples
 
 prints the max value of the population field for all features in the layer
 
@@ -461,14 +461,14 @@ This function has 2 signatures:
 
 Returns the mean value of an array of numbers.
 
-#### Parameters
+#### Parameter
 
 - **`numbers`**: [Number[]](../../guide/types/#number)  
 A list or array of numbers from which to calculate the mean.
 
 #### Return value: [Number](../../guide/types/#number)
 
-#### Example
+#### Examples
 
 Use a single array as input.
 
@@ -503,7 +503,7 @@ Specifies the name of a numeric field or SQL92 expression for which the statisti
 
 #### Return value: [Number](../../guide/types/#number)
 
-#### Example
+#### Examples
 
 calculates the difference between the feature's population and the mean population of all features in the layer
 
@@ -532,14 +532,14 @@ This function has 2 signatures:
 
 Returns the lowest value in a given array.
 
-#### Parameters
+#### Parameter
 
 - **`numbers`**: [Number[]](../../guide/types/#number)  
 An array or list of numbers.
 
 #### Return value: [Number](../../guide/types/#number)
 
-#### Example
+#### Examples
 
 prints 23
 
@@ -568,7 +568,7 @@ Specifies the name of a numeric field or SQL92 expression for which the statisti
 
 #### Return value: [Number](../../guide/types/#number)
 
-#### Example
+#### Examples
 
 prints the min value of the population field for all features in the layer
 
@@ -661,7 +661,7 @@ Round(2316.2562, 2)
 
 Returns the sine of the input value.
 
-#### Parameters
+#### Parameter
 
 - **`value`**: [Number](../../guide/types/#number)  
 A number in radians on which to perform the operation.
@@ -685,7 +685,7 @@ Sin(1)
 
 Returns the square root of a number.
 
-#### Parameters
+#### Parameter
 
 - **`value`**: [Number](../../guide/types/#number)  
 A number on which to calculate the square root.
@@ -715,7 +715,7 @@ This function has 2 signatures:
 
 Returns the standard deviation (population standard deviation) of a set of numbers.
 
-#### Parameters
+#### Parameter
 
 - **`numbers`**: [Number[]](../../guide/types/#number)  
 An array or list of numbers on which to perform the operation.
@@ -745,7 +745,7 @@ Specifies the name of a numeric field or SQL92 expression for which the statisti
 
 #### Return value: [Number](../../guide/types/#number)
 
-#### Example
+#### Examples
 
 prints the standard deviation of values from the 'population' field
 
@@ -774,7 +774,7 @@ This function has 2 signatures:
 
 Returns the sum of a set of numbers.
 
-#### Parameters
+#### Parameter
 
 - **`numbers`**: [Number[]](../../guide/types/#number)  
 An array of numbers on which to perform the operation.
@@ -804,7 +804,7 @@ Specifies the name of a numeric field or SQL92 expression for which the statisti
 
 #### Return value: [Number](../../guide/types/#number)
 
-#### Example
+#### Examples
 
 calculates the population of the current feature as a % of the total population of all features in the layer
 
@@ -827,7 +827,7 @@ Sum($layer, 'democrat + republican + other')
 
 Returns the tangent of an angle in radians.
 
-#### Parameters
+#### Parameter
 
 - **`value`**: [Number](../../guide/types/#number)  
 A number on which to calculate the tangent.
@@ -857,7 +857,7 @@ This function has 2 signatures:
 
 Returns the variance (population variance) of a set of numbers.
 
-#### Parameters
+#### Parameter
 
 - **`numbers`**: [Number[]](../../guide/types/#number)  
 An array of numbers on which to perform the operation.
@@ -887,7 +887,7 @@ Specifies the name of a numeric field or SQL92 expression for which the statisti
 
 #### Return value: [Number](../../guide/types/#number)
 
-#### Example
+#### Examples
 
 prints the variance for the population field in the given layer
 

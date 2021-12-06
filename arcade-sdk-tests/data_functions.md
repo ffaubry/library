@@ -90,7 +90,7 @@ Represents the value of an element in the array.
 
 `true` if the test function returns a truthy value for all the elements.
 
-#### Example
+#### Examples
 
 Returns `false` because some of the elements in the input array do not pass the `isEven` test
 
@@ -137,7 +137,7 @@ Represents the value of an element in the array.
 
 `true` if the test function returns a truthy value for any of the elements.
 
-#### Example
+#### Examples
 
 Returns `true` because at least one element in the input array passes the `isEven` test.
 
@@ -179,7 +179,7 @@ The value for each element in the array. If no value is specified, the default w
 
 #### Return value: [Array](../../guide/types/#array)
 
-#### Example
+#### Examples
 
 Returns `[null, null, null, null, null]`.
 
@@ -244,7 +244,7 @@ Count(Attachments($feature))
 
 Returns the last element of an array. If the array is empty, then `Back(array)` will cause the script evaluation to fail.
 
-#### Parameters
+#### Parameter
 
 - **`array`**: [Array](../../guide/types/#array)  
 The array to get the last value from.
@@ -269,14 +269,14 @@ Back(colors)
 
 Attempts to convert the given non-boolean value to a boolean value. For example a string 'true' would become `true`.
 
-#### Parameters
+#### Parameter
 
 - **`value`**: [Text](../../guide/types/#text) \| [Number](../../guide/types/#number)  
 A text or number value to be converted to a boolean.
 
 #### Return value: [Boolean](../../guide/types/#boolean)
 
-#### Example
+#### Examples
 
 ```arcade
 // returns `true`
@@ -350,14 +350,14 @@ This function has 2 signatures:
 
 Returns the number of items in an array or the number of characters in a string.
 
-#### Parameters
+#### Parameter
 
 - **`value`**: [Array](../../guide/types/#array) \| [Text](../../guide/types/#text)  
 An array or string on which to perform the operation.
 
 #### Return value: [Number](../../guide/types/#number)
 
-#### Example
+#### Examples
 
 Returns 6
 
@@ -377,7 +377,7 @@ Count('Graham County')
 
 Returns the number of features in a layer.
 
-#### Parameters
+#### Parameter
 
 - **`features`**: [FeatureSet](../../guide/types/#featureset)  
 A FeatureSet from which to count the number of features
@@ -435,7 +435,7 @@ return d.field1 + d.field2
 
 Returns a new dictionary from stringified JSON.
 
-#### Parameters
+#### Parameter
 
 - **`jsonText`**: [Text](../../guide/types/#text)  
 The stringified JSON to convert to an Arcade dictionary.
@@ -469,14 +469,14 @@ This function has 2 signatures:
 
 Returns a set of distinct, or unique, values for a given array or list of values.
 
-#### Parameters
+#### Parameter
 
 - **`values`**: [Array](../../guide/types/#array)  
 An array of values on which to perform the operation.
 
 #### Return value: [Array](../../guide/types/#array)
 
-#### Example
+#### Examples
 
 ```arcade
 Distinct([1,1,2,1,1,2,2,3,4,5])
@@ -512,7 +512,7 @@ A SQL-92 expression from which to calculate a unique value.
 
 #### Return value: [FeatureSet](../../guide/types/#featureset)
 
-#### Example
+#### Examples
 
 Returns a FeatureSet with a 'Status' column. Each row of the FeatureSet contains a unique stats value
 
@@ -820,7 +820,7 @@ The index of the value to remove from the array. If a negative index is provided
 
 #### Return value: Null
 
-#### Example
+#### Examples
 
 ```arcade
 var colors = ['orange', 'purple', 'gray']
@@ -862,7 +862,7 @@ An ongoing list of field names to request for the given feature. List only field
 
 #### Return value: Null
 
-#### Example
+#### Examples
 
 Requests fields not easily detected by the renderer
 
@@ -964,7 +964,7 @@ Ongoing name/value pairs for each attribute in the feature.
 
 #### Return value: [Feature](../../guide/types/#feature)
 
-#### Example
+#### Examples
 
 ```arcade
 Feature(pointGeometry, 'city_name', 'Spokane', 'population', 210721)
@@ -999,7 +999,7 @@ Feature(JSONString)
 
 Creates a new FeatureSet from JSON according to the ArcGIS REST spec. See the snippet below for an example of this.
 
-#### Parameters
+#### Parameter
 
 - **`definition`**: [Text](../../guide/types/#text)  
 The JSON describing a set of features. The JSON must be contained in a text value.
@@ -1083,7 +1083,7 @@ Applies to `junctionEdge` association types. Indicates which side the junction i
 
 **Possible values:** `from` \| `to`
 
-#### Example
+#### Examples
 
 Returns all assets that have connectivity associations with the low side terminal of the transformer.
 
@@ -1276,7 +1276,7 @@ The SQL92 expression used to filter features in the layer. This expression can s
 
 #### Return value: [FeatureSet](../../guide/types/#featureset)
 
-#### Example
+#### Examples
 
 Filter features using a SQL92 expression
 
@@ -1315,7 +1315,7 @@ Represents the value of an element in the array.
 
 Returns an array with the elements that passe the test function.
 
-#### Example
+#### Examples
 
 Returns a new array comprised of elements that passed the `isEven` filter.
 
@@ -1354,7 +1354,7 @@ This function has 2 signatures:
 
 Returns the first element in an array. Returns `null` if the array is empty.
 
-#### Parameters
+#### Parameter
 
 - **`array`**: [Array](../../guide/types/#array)  
 The array from which to return the first item.
@@ -1375,7 +1375,7 @@ First(['orange', 'purple', 'gray'])
 
 Returns the first feature in a FeatureSet. Returns `null` if the FeatureSet is empty.
 
-#### Parameters
+#### Parameter
 
 - **`features`**: [FeatureSet](../../guide/types/#featureset)  
 The FeatureSet from which to return the first feature.
@@ -1401,14 +1401,14 @@ Area( First($layer) )
 
 Converts stringified (serialized) JSON objects into their equivalent Arcade data types.
 
-#### Parameters
+#### Parameter
 
 - **`jsonText`**: [Text](../../guide/types/#text)  
 The stringified JSON to deserialize to an Arcade data type.
 
 #### Return value: [Dictionary](../../guide/types/#dictionary) \| [Array](../../guide/types/#array) \| [Text](../../guide/types/#text) \| [Boolean](../../guide/types/#boolean) \| [Number](../../guide/types/#number)
 
-#### Example
+#### Examples
 
 Converts text to a boolean
 
@@ -1463,7 +1463,7 @@ This function has 2 signatures:
 
 Returns the name of the current geodatabase version for branch or versioned data. When the data is not in a multi-user geodatabase, an empty string will be returned. See [Overview of Versioning](https://pro.arcgis.com/en/pro-app/help/data/geodatabases/overview/overview-of-versioning-in-arcgis-pro.htm) for more information.
 
-#### Parameters
+#### Parameter
 
 - **`feature`**: [Feature](../../guide/types/#feature)  
 A Feature from which to return the current geodatabase version of the associated layer.
@@ -1486,7 +1486,7 @@ GdbVersion($feature)
 
 Returns the name of the current geodatabase version for branch or versioned data. When the data is not in a multi-user geodatabase, an empty string will be returned. See [Overview of Versioning](https://pro.arcgis.com/en/pro-app/help/data/geodatabases/overview/overview-of-versioning-in-arcgis-pro.htm) for more information.
 
-#### Parameters
+#### Parameter
 
 - **`features`**: [FeatureSet](../../guide/types/#featureset)  
 A FeatureSet from which to return the current geodatabase version.
@@ -1529,7 +1529,7 @@ Possible Values:
 
 #### Return value: [FeatureSet](../../guide/types/#featureset)
 
-#### Example
+#### Examples
 
 Returns a FeatureSet representing all the features in the data source.
 
@@ -1804,7 +1804,7 @@ Possible Values: SUM \| COUNT \| MIN \| MAX \| AVG \| STDEV \| VAR
 
 #### Return value: [FeatureSet](../../guide/types/#featureset)
 
-#### Example
+#### Examples
 
 Returns the count of each tree type
 
@@ -1843,7 +1843,7 @@ var treeStats = GroupBy($layer,
 
 Returns a random GUID as a string.
 
-#### Parameters
+#### Parameter
 
 - **`guidFormat`** (_Optional_): [Text](../../guide/types/#text)  
 An named format for the GUID. The default value is `digits-hyphen-braces`.  
@@ -1851,7 +1851,7 @@ Possible Values: digits / digits-hyphen / digits-hyphen-braces / digits-hyphen-p
 
 #### Return value: [Text](../../guide/types/#text)
 
-#### Example
+#### Examples
 
 Returns a value similar to `{db894515-ed21-4df1-af67-36232256f59a}`
 
@@ -1876,7 +1876,7 @@ Guid('digits')
 
 Generates a hash code value for the given variable.
 
-#### Parameters
+#### Parameter
 
 - **`value`**: [Text](../../guide/types/#text) \| [Number](../../guide/types/#number) \| [Boolean](../../guide/types/#boolean) \| [Date](../../guide/types/#date) \| [Array](../../guide/types/#array) \| [Dictionary](../../guide/types/#dictionary) \| [Geometry](../../guide/types/#geometry)  
 The variable to be hashed.
@@ -1938,7 +1938,7 @@ The value to look for in the given array.
 
 #### Return value: [Boolean](../../guide/types/#boolean)
 
-#### Example
+#### Examples
 
 Returns `true`.
 
@@ -2001,7 +2001,7 @@ The value to insert into the array.
 
 #### Return value: Null
 
-#### Example
+#### Examples
 
 ```arcade
 var colors = ['orange', 'purple', 'gray']
@@ -2024,14 +2024,14 @@ Insert(colors, -1, 'yellow')
 
 Returns `true` if the provided value is `null` or an empty string (e.g. `''`). Returns `false` for all other cases, including empty arrays and dictionaries.
 
-#### Parameters
+#### Parameter
 
 - **`value`**: *  
 The value that is compared against `null` or `''`. This may be a value of any type.
 
 #### Return value: [Boolean](../../guide/types/#boolean)
 
-#### Example
+#### Examples
 
 ```arcade
 // Returns true
@@ -2054,14 +2054,14 @@ IsEmpty('hello world')
 
 Indicates whether the input value is not a number (NaN). A number is considered NaN in one of the following scenarios: - `0/0` - `Infinity / Infinity` - `Infinity * 0` - Any operation in which NaN is an operand - Casting a non-numeric string or `undefined` to a number
 
-#### Parameters
+#### Parameter
 
 - **`value`**: *  
 The value to check if it is NaN.
 
 #### Return value: [Boolean](../../guide/types/#boolean)
 
-#### Example
+#### Examples
 
 ```arcade
 // Returns true
@@ -2098,7 +2098,7 @@ Represents the value of an element in the array.
 
 The items returned by the mapping function.
 
-#### Example
+#### Examples
 
 Converts all of the elements in the array from Fahrenheit to Celsius and returns them in a new array.
 
@@ -2136,7 +2136,7 @@ Map(dates, formatDates);
 
 Returns the next sequence value from the database sequence specified. If `inputSequenceName` does not exist, the expression will error.
 
-#### Parameters
+#### Parameter
 
 - **`sequenceName`**: [Text](../../guide/types/#text)  
 The name of the sequence. This must already be configured in the database.
@@ -2176,7 +2176,7 @@ Represents the value of an element in the array.
 
 `true` if all the elements in the array don't pass the test function.
 
-#### Example
+#### Examples
 
 Returns `false` because some of the elements in the input array pass the `isEven` test
 
@@ -2221,7 +2221,7 @@ The format pattern string used to parse numbers formatted in a localized context
 
 #### Return value: [Number](../../guide/types/#number)
 
-#### Example
+#### Examples
 
 Parses a number using a grouping separator appropriate for the local in which the expression is executed
 
@@ -2287,7 +2287,7 @@ The SQL92 expression used to order features in the layer.
 
 #### Return value: [FeatureSet](../../guide/types/#featureset)
 
-#### Example
+#### Examples
 
 Order features by population where features with the highest population are listed first
 
@@ -2312,7 +2312,7 @@ OrderBy($layer, 'Rank ASC')
 
 Removes and returns the element at the end of the array. If the array is empty, then an error is thrown.
 
-#### Parameters
+#### Parameter
 
 - **`array`**: [Array](../../guide/types/#array)  
 The input array from which the last element will be removed and returned.
@@ -2340,14 +2340,14 @@ Pop(['orange', 'purple', 'gray'])
 
 Creates a reference to an ArcGIS Portal.
 
-#### Parameters
+#### Parameter
 
 - **`url`**: [Text](../../guide/types/#text)  
 The url of the portal.
 
 #### Return value: [Portal](../../guide/types/#portal)
 
-#### Example
+#### Examples
 
 Query features from a portal item in ArcGIS Online
 
@@ -2419,7 +2419,7 @@ An item to pass into the first argument of the reducer function.
 
 The value that was assembled by the reducer function for each element in the array.
 
-#### Example
+#### Examples
 
 Without the `initialValue` parameter, the first two elements of the `cities` array are passed into the add function as arguments.
 
@@ -2483,7 +2483,7 @@ The optional value that will be used for any new elements added to the array. If
 
 #### Return value: Null
 
-#### Example
+#### Examples
 
 Returns `['orange', 'purple', 'gray', null, null]`
 
@@ -2518,7 +2518,7 @@ return colors
 
 Reverses the contents of the array in place.
 
-#### Parameters
+#### Parameter
 
 - **`array`**: [Array](../../guide/types/#array)  
 The array to be reversed.
@@ -2552,7 +2552,7 @@ This function has 2 signatures:
 
 Returns the schema description of the provided Feature.
 
-#### Parameters
+#### Parameter
 
 - **`feature`**: [Feature](../../guide/types/#feature)  
 The feature whose schema to return.
@@ -2579,7 +2579,7 @@ The objectId field of the Feature.
 
 Returns the schema description of the provided FeatureSet.
 
-#### Parameters
+#### Parameter
 
 - **`features`**: [FeatureSet](../../guide/types/#featureset)  
 The FeatureSet whose schema to return.
@@ -2618,7 +2618,7 @@ The index where the slice will end. The value at this index will not be included
 
 #### Return value: [Array](../../guide/types/#array)
 
-#### Example
+#### Examples
 
 Returns `['purple', 'gray']`
 
@@ -2670,7 +2670,7 @@ The second element for comparison.
 
 #### Return value: [Array](../../guide/types/#array)
 
-#### Example
+#### Examples
 
 returns `['$', 1, 'A', 'a']`
 
@@ -2713,7 +2713,7 @@ Ongoing values to be spliced into a new array.
 
 #### Return value: [Array](../../guide/types/#array)
 
-#### Example
+#### Examples
 
 Returns `['orange', 'purple', 1, 2, 'red']`
 
@@ -2738,7 +2738,7 @@ Splice([1,2], [3,4])
 
 Returns the subtype code for a given feature.
 
-#### Parameters
+#### Parameter
 
 - **`feature`**: [Feature](../../guide/types/#feature)  
 The Feature from which to get the subtype code.
@@ -2766,7 +2766,7 @@ SubtypeCode($feature)  // returns 1
 
 Returns the subtype name for a given feature.
 
-#### Parameters
+#### Parameter
 
 - **`feature`**: [Feature](../../guide/types/#feature)  
 The Feature from which to get the subtype name.
@@ -2800,7 +2800,7 @@ This function has 2 signatures:
 
 Returns the subtype coded value Dictionary. Returns `null` when subtypes are not enabled on the layer.
 
-#### Parameters
+#### Parameter
 
 - **`feature`**: [Feature](../../guide/types/#feature)  
 The Feature from which to get subtypes.
@@ -2839,7 +2839,7 @@ Subtypes($feature)
 
 Returns the subtype coded value Dictionary. Returns `null` when subtypes are not enabled on the layer.
 
-#### Parameters
+#### Parameter
 
 - **`features`**: [FeatureSet](../../guide/types/#featureset)  
 The FeatureSet from which to get subtypes.
@@ -2882,14 +2882,14 @@ Subtypes(fsTransformer)
 
 Converts an integer to a hexidecimal representation.
 
-#### Parameters
+#### Parameter
 
 - **`value`**: [Number](../../guide/types/#number)  
 The value to be converted to a hexidecimal value.
 
 #### Return value: [Text](../../guide/types/#text)
 
-#### Example
+#### Examples
 
 Returns `"64"`.
 
@@ -2975,14 +2975,14 @@ Top( OrderBy($layer, 'POPULATION DESC'), 5 )
 
 Returns the type of the input value. Will return one of the following types: Array, Date, Text, Boolean, Number, Dictionary, Feature, Point, Polygon, Polyline, Multipoint, Extent, Function, Unrecognized Type.
 
-#### Parameters
+#### Parameter
 
 - **`value`**: *  
 The input value, variable, or feature attribute.
 
 #### Return value: [Text](../../guide/types/#text)
 
-#### Example
+#### Examples
 
 prints 'Boolean'
 

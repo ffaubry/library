@@ -430,14 +430,14 @@ BufferGeodetic($feature, 0.5, 'miles')
 
 Returns the centroid of the input geometry.
 
-#### Parameters
+#### Parameter
 
 - **`polygon`**: [Polygon](../../guide/types/#polygon) \| [Feature](../../guide/types/#feature) \| [Point[]](../../guide/types/#point)  
 The polygon or array of points composing a polygon.
 
 #### Return value: [Point](../../guide/types/#point)
 
-#### Example
+#### Examples
 
 Returns the centroid of the given polygon
 
@@ -643,7 +643,7 @@ Controls text formatting. Only applicable if `outputType` is `text`.
 
 #### Return value: [Array](../../guide/types/#array) \| [Number](../../guide/types/#number) \| [Text](../../guide/types/#text)
 
-#### Example
+#### Examples
 
 Examples where the `outputType` is `value`.
 
@@ -1099,14 +1099,14 @@ Constructs an Extent object from a JSON string or an object literal. The JSON sc
 
 **Be aware that using `$feature` as input to this function will yield results only as precise as the view's scale resolution. Therefore values returned from expressions using this function may change after zooming between scales.** [Read more here](../../function-reference/geometry_functions/).
 
-#### Parameters
+#### Parameter
 
 - **`geometry`**: [Dictionary](../../guide/types/#dictionary) \| [Geometry](../../guide/types/#geometry) \| [Feature](../../guide/types/#feature)  
 The JSON or Geometry from which to construct the extent geometry object.
 
 #### Return value: [Extent](../../guide/types/#extent)
 
-#### Example
+#### Examples
 
 ```arcade
 // Creates an Extent object
@@ -1170,14 +1170,14 @@ Constructs a Geometry object from a JSON string or an object literal. The JSON s
 
 **Be aware that using `$feature` as input to this function will yield results only as precise as the view's scale resolution. Therefore values returned from expressions using this function may change after zooming between scales.** [Read more here](../../function-reference/geometry_functions/).
 
-#### Parameters
+#### Parameter
 
 - **`feature`**: [Feature](../../guide/types/#feature) \| [Dictionary](../../guide/types/#dictionary)  
 The Feature or JSON from which to construct the geometry object.
 
 #### Return value: [Geometry](../../guide/types/#geometry)
 
-#### Example
+#### Examples
 
 Returns the geometry of the feature
 
@@ -1305,7 +1305,7 @@ Count( Intersects($layer, geom2) );
 
 Indicates whether the input geometry has rings, paths, or points that intersect or cross other parts of the geometry. For example, a single polyline feature whose paths intersect each other or a polygon with rings that self intersect would return `true`. 
 
-#### Parameters
+#### Parameter
 
 - **`geometry`**: [Geometry](../../guide/types/#geometry) \| [Feature](../../guide/types/#feature)  
 The polygon, polyline, or multipoint geometry to test for the self intersection.
@@ -1336,7 +1336,7 @@ Indicates if the given geometry is topologically simple.
 
 **Be aware that using `$feature` as input to this function will yield results only as precise as the view's scale resolution. Therefore values returned from expressions using this function may change after zooming between scales.** [Read more here](../../function-reference/geometry_functions/).
 
-#### Parameters
+#### Parameter
 
 - **`geometry`**: [Geometry](../../guide/types/#geometry) \| [Feature](../../guide/types/#feature)  
 The input geometry.
@@ -1444,7 +1444,7 @@ Measurement unit of the return value. Use one of the string values listed in the
 
 #### Return value: [Number](../../guide/types/#number)
 
-#### Example
+#### Examples
 
 Returns the 3D planar length of the feature in the unit of the spatial reference of the context executing the expression.
 
@@ -1563,7 +1563,7 @@ Converts a multi-part geometry into separate geometries.
 
 **Be aware that using `$feature` as input to this function will yield results only as precise as the view's scale resolution. Therefore values returned from expressions using this function may change after zooming between scales.** [Read more here](../../function-reference/geometry_functions/).
 
-#### Parameters
+#### Parameter
 
 - **`geometry`**: [Geometry](../../guide/types/#geometry) \| [Feature](../../guide/types/#feature)  
 The multi-part geometry to break into single parts.
@@ -1591,7 +1591,7 @@ Constructs a Multipoint object from a JSON string or an object literal. The JSON
 
 **Be aware that using `$feature` as input to this function will yield results only as precise as the view's scale resolution. Therefore values returned from expressions using this function may change after zooming between scales.** [Read more here](../../function-reference/geometry_functions/).
 
-#### Parameters
+#### Parameter
 
 - **`definition`**: [Dictionary](../../guide/types/#dictionary)  
 The JSON from which to construct the multipoint geometry object.
@@ -1729,7 +1729,7 @@ Constructs a Point object from a JSON string or an object literal. The JSON sche
 
 **Be aware that using `$feature` as input to this function will yield results only as precise as the view's scale resolution. Therefore values returned from expressions using this function may change after zooming between scales.** [Read more here](../../function-reference/geometry_functions/).
 
-#### Parameters
+#### Parameter
 
 - **`definition`**: [Dictionary](../../guide/types/#dictionary)  
 The JSON from which to construct the point geometry object.
@@ -1755,7 +1755,7 @@ Constructs a Polygon object from a JSON string or an object literal. The JSON sc
 
 **Be aware that using `$feature` as input to this function will yield results only as precise as the view's scale resolution. Therefore values returned from expressions using this function may change after zooming between scales.** [Read more here](../../function-reference/geometry_functions/).
 
-#### Parameters
+#### Parameter
 
 - **`definition`**: [Dictionary](../../guide/types/#dictionary)  
 The JSON from which to construct the polygon geometry object.
@@ -1787,7 +1787,7 @@ Constructs a Polyline object from a JSON string or an object literal. The JSON s
 
 **Be aware that using `$feature` as input to this function will yield results only as precise as the view's scale resolution. Therefore values returned from expressions using this function may change after zooming between scales.** [Read more here](../../function-reference/geometry_functions/).
 
-#### Parameters
+#### Parameter
 
 - **`definition`**: [Dictionary](../../guide/types/#dictionary)  
 The JSON from which to construct the polyline geometry object.
@@ -1853,7 +1853,7 @@ Relate($feature, geometry2, 'TTTFFTFFT')
 
 Indicates whether the points in a polygon ring are ordered in a clockwise direction.
 
-#### Parameters
+#### Parameter
 
 - **`points`**: [Array](../../guide/types/#array)  
 An array of points in a polygon ring.
@@ -1947,7 +1947,7 @@ Performs the simplify operation on the geometry. This alters the given geometry 
 
 **Be aware that using `$feature` as input to this function will yield results only as precise as the view's scale resolution. Therefore values returned from expressions using this function may change after zooming between scales.** [Read more here](../../function-reference/geometry_functions/).
 
-#### Parameters
+#### Parameter
 
 - **`geometry`**: [Geometry](../../guide/types/#geometry) \| [Feature](../../guide/types/#feature)  
 The geometry to be simplified.
@@ -2077,7 +2077,7 @@ Constructs the set-theoretic union of the geometries in an input array, or list,
 
 **Be aware that using `$feature` as input to this function will yield results only as precise as the view's scale resolution. Therefore values returned from expressions using this function may change after zooming between scales.** [Read more here](../../function-reference/geometry_functions/).
 
-#### Parameters
+#### Parameter
 
 - **`geometries`**: [Geometry[]](../../guide/types/#geometry) \| [Feature[]](../../guide/types/#feature)  
 An array, or list, of geometries to union into a single geometry. This can be any number of geometries.
@@ -2086,7 +2086,7 @@ An array, or list, of geometries to union into a single geometry. This can be an
 
 ![Union_img](../images/geometry_functions/union.jpg)
 
-#### Example
+#### Examples
 
 Unions geometries passed as an array
 

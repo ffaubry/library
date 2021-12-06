@@ -42,7 +42,7 @@ The following functions allow you to create and evaluate expressions with track 
 
 The acceleration at the observation relative to the current observation.
 
-#### Parameters
+#### Parameter
 
 - **`value`**: [Number](../../guide/types/#number)  
 The number of features before or after the current observation.  
@@ -52,7 +52,7 @@ The current feature is index 0. Positive values represent features that occur in
 
 ![TrackAccelerationAt_img](../images/track_functions/gax_track_sp_ac_dis_example.png)
 
-#### Example
+#### Examples
 
 Your track has six features, as seen above. The expression returns a number for each feature representing the acceleration value in meters per second squared. In this example, we examine results of feature 1 (p1) with a `value` of 1. The result is equal to the acceleration of feature 2 (p2).
 
@@ -94,7 +94,7 @@ The index of the feature at the end of the window. The current feature is index 
 
 ![TrackAccelerationWindow_img](../images/track_functions/gax_track_sp_ac_dis_example.png)
 
-#### Example
+#### Examples
 
 Your track has six features, as seen above. The expression returns an array containing the acceleration value for each feature in the specified window. Accelerations are calculated in meters per second squared. In this example, we examine results of feature 3 (p3) when evaluated with a `startIndex` of `-1` and an `endIndex` of `2`.
 
@@ -129,7 +129,7 @@ The acceleration of the current observation measured between the previous observ
 
 ![TrackCurrentAcceleration_img](../images/track_functions/gax_track_sp_ac_dis_example.png)
 
-#### Example
+#### Examples
 
 Your track has six features, as seen above. The expression returns a number for each feature representing the acceleration value in meters per second squared. In the first example, we examine results of feature 2 (p2).
 
@@ -164,7 +164,7 @@ The sum of the distances travelled between observations from the first to curren
 
 ![TrackCurrentDistance_img](../images/track_functions/gax_track_sp_ac_dis_example.png)
 
-#### Example
+#### Examples
 
 Your track has six features, as seen above. The expression returns a value for the current feature in the track. In the first example, we examine results for feature 3 (p3). The calculation is `80 + 60 = 140`.
 
@@ -199,7 +199,7 @@ The speed between the previous observation and the current observation.
 
 ![TrackCurrentSpeed_img](../images/track_functions/gax_track_sp_ac_dis_example.png)
 
-#### Example
+#### Examples
 
 Your track has six features, as seen above. The expression returns a number for each feature representing the speed calculated in meters per second. In the first example, we examine results of feature 2 (p2). The calculation is `60/60`.
 
@@ -254,7 +254,7 @@ TrackCurrentTime();
 
 The sum of the distances travelled between observations from the first to the current observation plus the given value.
 
-#### Parameters
+#### Parameter
 
 - **`index`**: [Number](../../guide/types/#number)  
 The index of the track feature to calculate distance for. For example, a value of `2` would calculate the distance from the first feature (index `0`) in the track to the third feature (index `2`) in the track.
@@ -263,7 +263,7 @@ The index of the track feature to calculate distance for. For example, a value o
 
 ![TrackDistanceAt_img](../images/track_functions/gax_track_sp_ac_dis_example.png)
 
-#### Example
+#### Examples
 
 Your track has six features, as seen above. The expression returns a value for each feature in the track. In the first example, we examine results when evaluated at feature 2 (p2) with an index value of 2. The calculation is `30 + 80 + 60 = 170`.
 
@@ -303,7 +303,7 @@ The index of the feature at the end of the window. The current feature is index 
 
 ![TrackDistanceWindow_img](../images/track_functions/gax_track_sp_ac_dis_example.png)
 
-#### Example
+#### Examples
 
 Your track has six features, as seen above. The expression returns an array containing the distance value for each feature in the window. In the first example, we examine results of feature 3 (p3) when evaluated with a `startIndex` of `-1` and an `endIndex` of `2`.
 
@@ -369,7 +369,7 @@ The index of the feature at the end of the window. The current feature is index 
 
 #### Return value: [Array](../../guide/types/#array)
 
-#### Example
+#### Examples
 
 Your track has a field with sequentially ordered values of `[10, 20, 30, 40, 50]`. The geometries of the features are `[{x: 1, y: 1},{x: 2, y: 2} ,{x: null, y: null},{x: 4, y: 4}, {x: 5, y: 5}]`. The expression is evaluated at each feature in the track. Results are returned inclusive of the start feature, and exclusive of the end feature. This example is evaluated at the second feature (20) and returns an array of the previous value (-1, inclusive).
 
@@ -455,7 +455,7 @@ TrackIndex() // returns 0
 
 The speed at the observation relative to the current observation. For example, at value 2, it's the speed at the observation two observations after the current.
 
-#### Parameters
+#### Parameter
 
 - **`value`**: [Number](../../guide/types/#number)  
 The number of features before or after the current observation. The current feature is index 0. Positive values represent features that occur in the future, after the current value. For example, position 1 is the next value in the array. Negative numbers represent features that occurred in the past, before the current feature. For example, -1 is the previous value in the array.
@@ -464,7 +464,7 @@ The number of features before or after the current observation. The current feat
 
 ![TrackSpeedAt_img](../images/track_functions/gax_track_sp_ac_dis_example.png)
 
-#### Example
+#### Examples
 
 Your track has six features, as seen above. The expression returns a number for each feature representing the speed calculated in meters per second. In the first example, we examine results of feature 1 (p1) with a `value` of 2. The calculation is `80/60`.
 
@@ -506,7 +506,7 @@ The index of the feature at the end of the window. The current feature is index 
 
 ![TrackSpeedWindow_img](../images/track_functions/gax_track_sp_ac_dis_example.png)
 
-#### Example
+#### Examples
 
 Your track has six features, as seen above. The expression returns an array containing the speed value for each feature in the specified window. Speeds are calculated in meters per second. In this example, we examine results of feature 3 (p3) when evaluated with a `startIndex` of `-1` and an `endIndex` of `2`.
 
@@ -567,7 +567,7 @@ The index of the feature at the end of the window. The current feature is index 
 
 #### Return value: [Feature[]](../../guide/types/#feature)
 
-#### Example
+#### Examples
 
 Your track has a field with sequentially ordered values of `[10, 20, 30, 40, 50]`. The geometries of the features are `[{x: 1, y: 1},{x: 2, y: 2} ,{x: null, y: null},{x: 4, y: 4}, {x: 5, y: 5}]`. The expression is evaluated at each feature in the track. Results are returned inclusive of the start feature, and exclusive of the end feature. This example is evaluated at the second feature (20) and returns an array of a single value -- the previous feature.
 

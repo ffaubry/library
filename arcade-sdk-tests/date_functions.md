@@ -63,7 +63,7 @@ The millisecond of the second (0-999).
 
 #### Return value: [Date](../../guide/types/#date)
 
-#### Example
+#### Examples
 
 Year, month, day
 
@@ -83,14 +83,14 @@ Date()
 
 Converts a Unix epoch number to a Date object.
 
-#### Parameters
+#### Parameter
 
 - **`epoch`** (_Optional_): [Number](../../guide/types/#number)  
 The number of milliseconds since January 1, 1970 UTC.
 
 #### Return value: [Date](../../guide/types/#date)
 
-#### Example
+#### Examples
 
 Returns a date object based on a field value
 
@@ -110,7 +110,7 @@ Date(1476987783555) // 'Thu Oct 20 2016 11:23:03 GMT-0700 (PDT)'
 
 Converts an ISO 8601 string to a Date object.
 
-#### Parameters
+#### Parameter
 
 - **`timestamp`** (_Optional_): [Text](../../guide/types/#text)  
 An ISO 8601 string to be converted into a date.
@@ -195,7 +195,7 @@ return age;
 
 Returns the day of the month of the given date.
 
-#### Parameters
+#### Parameter
 
 - **`date`**: [Date](../../guide/types/#date)  
 A date value from which to get the day of the month.
@@ -219,7 +219,7 @@ Day(Now())
 
 Returns the hour of the time in the given date (0-23).
 
-#### Parameters
+#### Parameter
 
 - **`date`**: [Date](../../guide/types/#date)  
 A date value from which to get the hour of the time.
@@ -245,7 +245,7 @@ Hour(Now())
 
 Returns the month of the given date, based on the ISO 8601 standard. Values range from 1-12 where January is `1` and December is `12`.
 
-#### Parameters
+#### Parameter
 
 - **`date`**: [Date](../../guide/types/#date)  
 A date value from which to get the month.
@@ -271,7 +271,7 @@ ISOMonth(Date(1980, 11, 31))
 
 Returns the week in the year of the given date, based on the ISO 8601 week date calendar. Values range from 1-53 where the first week of the year is `1` and the last week of the year is `52` or `53`, depending on the year.
 
-#### Parameters
+#### Parameter
 
 - **`date`**: [Date](../../guide/types/#date)  
 A date value from which to get the week.
@@ -297,7 +297,7 @@ ISOWeek(Date(1980, 11, 31))
 
 Returns the day of the week of the given date, based on the ISO 8601 standard. Values range from 1-7 where Monday is `1` and Sunday is `7`.
 
-#### Parameters
+#### Parameter
 
 - **`date`**: [Date](../../guide/types/#date)  
 A date value from which to return the day of the week.
@@ -323,7 +323,7 @@ ISOWeekday(Date(1980, 11, 31))
 
 Returns the year of the given date based on the ISO 8601 week date calendar.
 
-#### Parameters
+#### Parameter
 
 - **`date`**: [Date](../../guide/types/#date)  
 A date value from which to get the year.
@@ -347,7 +347,7 @@ ISOYear(Date(1980, 11, 31))
 
 Returns the millisecond of the time in the date.
 
-#### Parameters
+#### Parameter
 
 - **`date`**: [Date](../../guide/types/#date)  
 A date value from which to get the millisecond of the time.
@@ -371,7 +371,7 @@ Millisecond(Now())
 
 Returns the minute of the time in the given date.
 
-#### Parameters
+#### Parameter
 
 - **`date`**: [Date](../../guide/types/#date)  
 A date value from which to get the minute of the time.
@@ -395,7 +395,7 @@ Minute(Now())
 
 Returns the month of the given date. Values range from 0-11 where January is `0` and December is `11`.
 
-#### Parameters
+#### Parameter
 
 - **`date`**: [Date](../../guide/types/#date)  
 A date value from which to get the month.
@@ -438,7 +438,7 @@ Now()
 
 Returns the second of the time in the date.
 
-#### Parameters
+#### Parameter
 
 - **`date`**: [Date](../../guide/types/#date)  
 A date value from which to get the second of the time.
@@ -504,7 +504,7 @@ Today()
 
 Converts the given UTC date to a date value in the local time of the client.
 
-#### Parameters
+#### Parameter
 
 - **`utcDate`**: [Date](../../guide/types/#date)  
 A UTC date value to convert to the local time of the client. This value is assumed to be in UTC time.
@@ -530,7 +530,7 @@ ToLocal(Timestamp())
 
 Converts the given date value from the client's local time to UTC time. Date values in Arcade are already assumed to be UTC. Sometimes dates in databases are stored in local time. Use this function to normalize dates stored in local time with other dates created in Arcade expressions.
 
-#### Parameters
+#### Parameter
 
 - **`localDate`**: [Date](../../guide/types/#date)  
 A date value in local time to convert to UTC time. This value is assumed to be in local time.
@@ -568,7 +568,7 @@ A number representing the start day of the week. Sunday = 0; Monday = 1; Tuesday
 
 #### Return value: [Number](../../guide/types/#number)
 
-#### Example
+#### Examples
 
 Use the default start of the week (Sunday)
 
@@ -610,7 +610,7 @@ Week( Date(2022,7,20) )
 
 Returns the day of the week of the given date. Values range from 0-6 where Sunday is `0` and Saturday is `6`.
 
-#### Parameters
+#### Parameter
 
 - **`date`**: [Date](../../guide/types/#date)  
 A date value from which to return the day of the week.
@@ -634,7 +634,7 @@ Weekday(Date(1980, 11, 31))
 
 Returns the year of the given date.
 
-#### Parameters
+#### Parameter
 
 - **`date`**: [Date](../../guide/types/#date)  
 A date value from which to get the year.

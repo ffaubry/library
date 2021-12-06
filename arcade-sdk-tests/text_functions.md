@@ -126,7 +126,7 @@ Ongoing sequence of numbers representing UTF-16 code units. Each unit has a rang
 
 #### Return value: [Text](../../guide/types/#text)
 
-#### Example
+#### Examples
 
 The following example returns 'XYZ'
 
@@ -162,7 +162,7 @@ A list of code points
 
 #### Return value: [Text](../../guide/types/#text)
 
-#### Example
+#### Examples
 
 The following example returns 'XYZ'
 
@@ -213,7 +213,7 @@ Left('the quick brown fox', 3)
 
 Makes a text value lower case.
 
-#### Parameters
+#### Parameter
 
 - **`text`**: [Text](../../guide/types/#text)  
 The text to be made lowercase.
@@ -360,7 +360,7 @@ Indicates whether to remove empty values. By default this is `false`.
 
 #### Return value: [Text[]](../../guide/types/#text)
 
-#### Example
+#### Examples
 
 returns '[red,green]'
 
@@ -418,7 +418,7 @@ Formatting string for dates or numbers. See the list of possible values below.
 
 #### Return value: [Text](../../guide/types/#text)
 
-#### Example
+#### Examples
 
 Pad the number to the left of the decimal
 
@@ -510,7 +510,7 @@ An integer with a value of at least 0 and no greater than the number of characte
 
 #### Return value: [Number](../../guide/types/#number)
 
-#### Example
+#### Examples
 
 The following example returns 88, the Unicode value for X.
 
@@ -567,7 +567,7 @@ Position of a character in `inputText` from which to return the code point value
 
 #### Return value: [Number](../../guide/types/#number)
 
-#### Example
+#### Examples
 
 The following example returns 88, the Unicode value for X.
 
@@ -606,7 +606,7 @@ ToCodePoint('🌉', 1)
 
 Removes spaces from the beginning or end of an input text value.
 
-#### Parameters
+#### Parameter
 
 - **`text`**: [Text](../../guide/types/#text)  
 The text to be trimmed.
@@ -630,7 +630,7 @@ Trim('   hello world')
 
 Makes text upper case.
 
-#### Parameters
+#### Parameter
 
 - **`text`**: [Text](../../guide/types/#text)  
 The text value to be made uppercase.
@@ -656,7 +656,7 @@ Upper('Hello')
 
 Encodes a URL by replacing each instance of certain characters by one, two, three, or four escape sequences representing the UTF-8 encoding of the character.
 
-#### Parameters
+#### Parameter
 
 - **`textOrDictionary`**: [Text](../../guide/types/#text) \| [Dictionary](../../guide/types/#dictionary)  
 The URL to be encoded.
